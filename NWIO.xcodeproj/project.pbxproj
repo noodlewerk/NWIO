@@ -1,0 +1,891 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D715C61C1472BD160098156B /* NWIOTransformTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3AC1472BA310036DB1F /* NWIOTransformTesting.m */; };
+		D75A3BCE1472B95B00DA0DF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75A3BCD1472B95B00DA0DF9 /* UIKit.framework */; };
+		D75A3BD01472B95B00DA0DF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75A3BCF1472B95B00DA0DF9 /* Foundation.framework */; };
+		D75A3BD21472B95B00DA0DF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75A3BD11472B95B00DA0DF9 /* CoreGraphics.framework */; };
+		D75A3BEF1472B95B00DA0DF9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75A3BEE1472B95B00DA0DF9 /* SenTestingKit.framework */; };
+		D75A3BF01472B95B00DA0DF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75A3BCD1472B95B00DA0DF9 /* UIKit.framework */; };
+		D75A3BF11472B95B00DA0DF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75A3BCF1472B95B00DA0DF9 /* Foundation.framework */; };
+		D799A2FB1472BA070036DB1F /* NWIOAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2B91472BA070036DB1F /* NWIOAccess.m */; };
+		D799A2FC1472BA070036DB1F /* NWIOBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2BB1472BA070036DB1F /* NWIOBase.m */; };
+		D799A2FD1472BA070036DB1F /* NWIOExtract.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2BD1472BA070036DB1F /* NWIOExtract.m */; };
+		D799A2FE1472BA070036DB1F /* NWIOFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2BF1472BA070036DB1F /* NWIOFilter.m */; };
+		D799A2FF1472BA070036DB1F /* NWIOStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2C11472BA070036DB1F /* NWIOStream.m */; };
+		D799A3001472BA070036DB1F /* NWIOTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2C31472BA070036DB1F /* NWIOTransform.m */; };
+		D799A3021472BA070036DB1F /* NWIOCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2C91472BA070036DB1F /* NWIOCounter.m */; };
+		D799A3031472BA070036DB1F /* NWIODigest.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2CB1472BA070036DB1F /* NWIODigest.m */; };
+		D799A3041472BA070036DB1F /* NWIOChain.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2CE1472BA070036DB1F /* NWIOChain.m */; };
+		D799A3051472BA070036DB1F /* NWIODropper.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2D01472BA070036DB1F /* NWIODropper.m */; };
+		D799A3061472BA070036DB1F /* NWIOIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2D21472BA070036DB1F /* NWIOIdentity.m */; };
+		D799A3071472BA070036DB1F /* NWIOLog.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2D41472BA070036DB1F /* NWIOLog.m */; };
+		D799A3081472BA070036DB1F /* NWIOMultipart.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2D61472BA070036DB1F /* NWIOMultipart.m */; };
+		D799A3091472BA070036DB1F /* NWIOProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2D81472BA070036DB1F /* NWIOProgress.m */; };
+		D799A30A1472BA070036DB1F /* NWIOStat.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2DA1472BA070036DB1F /* NWIOStat.m */; };
+		D799A30B1472BA070036DB1F /* NWIOCGData.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2DE1472BA070036DB1F /* NWIOCGData.m */; };
+		D799A30C1472BA070036DB1F /* NWIOConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2E01472BA070036DB1F /* NWIOConstant.m */; };
+		D799A30D1472BA070036DB1F /* NWIOData.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2E21472BA070036DB1F /* NWIOData.m */; };
+		D799A30E1472BA070036DB1F /* NWIONSStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2E41472BA070036DB1F /* NWIONSStream.m */; };
+		D799A30F1472BA070036DB1F /* NWIORandom.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2E61472BA070036DB1F /* NWIORandom.m */; };
+		D799A3101472BA070036DB1F /* NWIOStitch.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2E81472BA070036DB1F /* NWIOStitch.m */; };
+		D799A3111472BA070036DB1F /* NWIOString.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2EA1472BA070036DB1F /* NWIOString.m */; };
+		D799A3121472BA070036DB1F /* NWIOConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2ED1472BA070036DB1F /* NWIOConvenience.m */; };
+		D799A3131472BA070036DB1F /* NWIODrain.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2EF1472BA070036DB1F /* NWIODrain.m */; };
+		D799A3141472BA070036DB1F /* NWIOCaseFlipper.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2F21472BA070036DB1F /* NWIOCaseFlipper.m */; };
+		D799A3151472BA070036DB1F /* NWIOCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2F41472BA070036DB1F /* NWIOCrypto.m */; };
+		D799A3161472BA070036DB1F /* NWIODeflate.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2F61472BA070036DB1F /* NWIODeflate.m */; };
+		D799A3171472BA070036DB1F /* NWIOHcode.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2F81472BA070036DB1F /* NWIOHcode.m */; };
+		D799A3181472BA070036DB1F /* NWIOZcode.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A2FA1472BA070036DB1F /* NWIOZcode.m */; };
+		D799A3421472BA150036DB1F /* NWIOCaseFlipperDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A31C1472BA150036DB1F /* NWIOCaseFlipperDemo.m */; };
+		D799A3431472BA150036DB1F /* NWIOConsoleDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A31E1472BA150036DB1F /* NWIOConsoleDemo.m */; };
+		D799A3441472BA150036DB1F /* NWIOCounterDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3201472BA150036DB1F /* NWIOCounterDemo.m */; };
+		D799A3451472BA150036DB1F /* NWIOCryptoDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3221472BA150036DB1F /* NWIOCryptoDemo.m */; };
+		D799A3461472BA150036DB1F /* NWIODeflateDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3241472BA150036DB1F /* NWIODeflateDemo.m */; };
+		D799A3471472BA150036DB1F /* NWIODigestDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3261472BA150036DB1F /* NWIODigestDemo.m */; };
+		D799A3481472BA150036DB1F /* NWIOEmptyDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3281472BA150036DB1F /* NWIOEmptyDemo.m */; };
+		D799A3491472BA150036DB1F /* NWIOHcodeDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A32A1472BA150036DB1F /* NWIOHcodeDemo.m */; };
+		D799A34A1472BA150036DB1F /* NWIOLogDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A32C1472BA150036DB1F /* NWIOLogDemo.m */; };
+		D799A34B1472BA150036DB1F /* NWIOMultipartDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A32E1472BA150036DB1F /* NWIOMultipartDemo.m */; };
+		D799A34C1472BA150036DB1F /* NWIORandomDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3301472BA150036DB1F /* NWIORandomDemo.m */; };
+		D799A34D1472BA150036DB1F /* NWIOZcodeDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3321472BA150036DB1F /* NWIOZcodeDemo.m */; };
+		D799A34E1472BA150036DB1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3331472BA150036DB1F /* main.m */; };
+		D799A34F1472BA150036DB1F /* NWIOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3351472BA150036DB1F /* NWIOAppDelegate.m */; };
+		D799A3511472BA150036DB1F /* NWIOConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3391472BA150036DB1F /* NWIOConsole.m */; };
+		D799A3521472BA150036DB1F /* NWIODemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A33B1472BA150036DB1F /* NWIODemo.m */; };
+		D799A3531472BA150036DB1F /* NWIODemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A33D1472BA150036DB1F /* NWIODemoViewController.m */; };
+		D799A3541472BA150036DB1F /* NWIODemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D799A33E1472BA150036DB1F /* NWIODemoViewController.xib */; };
+		D799A3551472BA150036DB1F /* NWIOMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3401472BA150036DB1F /* NWIOMenuViewController.m */; };
+		D799A3561472BA150036DB1F /* NWIOMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D799A3411472BA150036DB1F /* NWIOMenuViewController.xib */; };
+		D799A3AF1472BA320036DB1F /* NWIOBidirectionalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A38D1472BA310036DB1F /* NWIOBidirectionalTest.m */; };
+		D799A3B01472BA320036DB1F /* NWIOIdentityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A38F1472BA310036DB1F /* NWIOIdentityTest.m */; };
+		D799A3B11472BA320036DB1F /* NWIOTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3911472BA310036DB1F /* NWIOTestData.m */; };
+		D799A3B31472BA320036DB1F /* test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D799A3941472BA310036DB1F /* test.pdf */; };
+		D799A3B41472BA320036DB1F /* test.pdf.crypto in Resources */ = {isa = PBXBuildFile; fileRef = D799A3951472BA310036DB1F /* test.pdf.crypto */; };
+		D799A3B51472BA320036DB1F /* test.pdf.deflate in Resources */ = {isa = PBXBuildFile; fileRef = D799A3961472BA310036DB1F /* test.pdf.deflate */; };
+		D799A3B61472BA320036DB1F /* NWIOCounterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A39B1472BA310036DB1F /* NWIOCounterTest.m */; };
+		D799A3B71472BA320036DB1F /* NWIODigestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A39D1472BA310036DB1F /* NWIODigestTest.m */; };
+		D799A3B81472BA320036DB1F /* NWIOCGDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3A11472BA310036DB1F /* NWIOCGDataTest.m */; };
+		D799A3B91472BA320036DB1F /* NWIOStitchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3A31472BA310036DB1F /* NWIOStitchTest.m */; };
+		D799A3BA1472BA320036DB1F /* NWIOCaseFlipperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3A61472BA310036DB1F /* NWIOCaseFlipperTest.m */; };
+		D799A3BC1472BA320036DB1F /* NWIOHcodeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3AA1472BA310036DB1F /* NWIOHcodeTest.m */; };
+		D799A3BE1472BA320036DB1F /* NWIOZcodeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3AE1472BA310036DB1F /* NWIOZcodeTest.m */; };
+		D799A3C01472BAE00036DB1F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D799A3BF1472BAE00036DB1F /* libz.dylib */; };
+		D799A3C11472BBD60036DB1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75A3BD11472B95B00DA0DF9 /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D75A3BF21472B95B00DA0DF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D75A3BC01472B95B00DA0DF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D75A3BC81472B95B00DA0DF9;
+			remoteInfo = NWIO;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D75A3BC91472B95B00DA0DF9 /* NWIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NWIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D75A3BCD1472B95B00DA0DF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D75A3BCF1472B95B00DA0DF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D75A3BD11472B95B00DA0DF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D75A3BED1472B95B00DA0DF9 /* NWIOTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NWIOTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D75A3BEE1472B95B00DA0DF9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D799A2B81472BA070036DB1F /* NWIOAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOAccess.h; sourceTree = "<group>"; };
+		D799A2B91472BA070036DB1F /* NWIOAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOAccess.m; sourceTree = "<group>"; };
+		D799A2BA1472BA070036DB1F /* NWIOBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOBase.h; sourceTree = "<group>"; };
+		D799A2BB1472BA070036DB1F /* NWIOBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOBase.m; sourceTree = "<group>"; };
+		D799A2BC1472BA070036DB1F /* NWIOExtract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOExtract.h; sourceTree = "<group>"; };
+		D799A2BD1472BA070036DB1F /* NWIOExtract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOExtract.m; sourceTree = "<group>"; };
+		D799A2BE1472BA070036DB1F /* NWIOFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOFilter.h; sourceTree = "<group>"; };
+		D799A2BF1472BA070036DB1F /* NWIOFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOFilter.m; sourceTree = "<group>"; };
+		D799A2C01472BA070036DB1F /* NWIOStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOStream.h; sourceTree = "<group>"; };
+		D799A2C11472BA070036DB1F /* NWIOStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOStream.m; sourceTree = "<group>"; };
+		D799A2C21472BA070036DB1F /* NWIOTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOTransform.h; sourceTree = "<group>"; };
+		D799A2C31472BA070036DB1F /* NWIOTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOTransform.m; sourceTree = "<group>"; };
+		D799A2C51472BA070036DB1F /* NWIOBio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOBio.h; sourceTree = "<group>"; };
+		D799A2C61472BA070036DB1F /* NWIOBio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOBio.m; sourceTree = "<group>"; };
+		D799A2C81472BA070036DB1F /* NWIOCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOCounter.h; sourceTree = "<group>"; };
+		D799A2C91472BA070036DB1F /* NWIOCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOCounter.m; sourceTree = "<group>"; };
+		D799A2CA1472BA070036DB1F /* NWIODigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIODigest.h; sourceTree = "<group>"; };
+		D799A2CB1472BA070036DB1F /* NWIODigest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIODigest.m; sourceTree = "<group>"; };
+		D799A2CD1472BA070036DB1F /* NWIOChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOChain.h; sourceTree = "<group>"; };
+		D799A2CE1472BA070036DB1F /* NWIOChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOChain.m; sourceTree = "<group>"; };
+		D799A2CF1472BA070036DB1F /* NWIODropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIODropper.h; sourceTree = "<group>"; };
+		D799A2D01472BA070036DB1F /* NWIODropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIODropper.m; sourceTree = "<group>"; };
+		D799A2D11472BA070036DB1F /* NWIOIdentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOIdentity.h; sourceTree = "<group>"; };
+		D799A2D21472BA070036DB1F /* NWIOIdentity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOIdentity.m; sourceTree = "<group>"; };
+		D799A2D31472BA070036DB1F /* NWIOLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOLog.h; sourceTree = "<group>"; };
+		D799A2D41472BA070036DB1F /* NWIOLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOLog.m; sourceTree = "<group>"; };
+		D799A2D51472BA070036DB1F /* NWIOMultipart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOMultipart.h; sourceTree = "<group>"; };
+		D799A2D61472BA070036DB1F /* NWIOMultipart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOMultipart.m; sourceTree = "<group>"; };
+		D799A2D71472BA070036DB1F /* NWIOProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOProgress.h; sourceTree = "<group>"; };
+		D799A2D81472BA070036DB1F /* NWIOProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOProgress.m; sourceTree = "<group>"; };
+		D799A2D91472BA070036DB1F /* NWIOStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOStat.h; sourceTree = "<group>"; };
+		D799A2DA1472BA070036DB1F /* NWIOStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOStat.m; sourceTree = "<group>"; };
+		D799A2DB1472BA070036DB1F /* NWIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIO.h; sourceTree = "<group>"; };
+		D799A2DD1472BA070036DB1F /* NWIOCGData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOCGData.h; sourceTree = "<group>"; };
+		D799A2DE1472BA070036DB1F /* NWIOCGData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOCGData.m; sourceTree = "<group>"; };
+		D799A2DF1472BA070036DB1F /* NWIOConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOConstant.h; sourceTree = "<group>"; };
+		D799A2E01472BA070036DB1F /* NWIOConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOConstant.m; sourceTree = "<group>"; };
+		D799A2E11472BA070036DB1F /* NWIOData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOData.h; sourceTree = "<group>"; };
+		D799A2E21472BA070036DB1F /* NWIOData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOData.m; sourceTree = "<group>"; };
+		D799A2E31472BA070036DB1F /* NWIONSStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIONSStream.h; sourceTree = "<group>"; };
+		D799A2E41472BA070036DB1F /* NWIONSStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIONSStream.m; sourceTree = "<group>"; };
+		D799A2E51472BA070036DB1F /* NWIORandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIORandom.h; sourceTree = "<group>"; };
+		D799A2E61472BA070036DB1F /* NWIORandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIORandom.m; sourceTree = "<group>"; };
+		D799A2E71472BA070036DB1F /* NWIOStitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOStitch.h; sourceTree = "<group>"; };
+		D799A2E81472BA070036DB1F /* NWIOStitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOStitch.m; sourceTree = "<group>"; };
+		D799A2E91472BA070036DB1F /* NWIOString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOString.h; sourceTree = "<group>"; };
+		D799A2EA1472BA070036DB1F /* NWIOString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOString.m; sourceTree = "<group>"; };
+		D799A2EC1472BA070036DB1F /* NWIOConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOConvenience.h; sourceTree = "<group>"; };
+		D799A2ED1472BA070036DB1F /* NWIOConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOConvenience.m; sourceTree = "<group>"; };
+		D799A2EE1472BA070036DB1F /* NWIODrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIODrain.h; sourceTree = "<group>"; };
+		D799A2EF1472BA070036DB1F /* NWIODrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIODrain.m; sourceTree = "<group>"; };
+		D799A2F11472BA070036DB1F /* NWIOCaseFlipper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOCaseFlipper.h; sourceTree = "<group>"; };
+		D799A2F21472BA070036DB1F /* NWIOCaseFlipper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOCaseFlipper.m; sourceTree = "<group>"; };
+		D799A2F31472BA070036DB1F /* NWIOCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOCrypto.h; sourceTree = "<group>"; };
+		D799A2F41472BA070036DB1F /* NWIOCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOCrypto.m; sourceTree = "<group>"; };
+		D799A2F51472BA070036DB1F /* NWIODeflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIODeflate.h; sourceTree = "<group>"; };
+		D799A2F61472BA070036DB1F /* NWIODeflate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIODeflate.m; sourceTree = "<group>"; };
+		D799A2F71472BA070036DB1F /* NWIOHcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOHcode.h; sourceTree = "<group>"; };
+		D799A2F81472BA070036DB1F /* NWIOHcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOHcode.m; sourceTree = "<group>"; };
+		D799A2F91472BA070036DB1F /* NWIOZcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOZcode.h; sourceTree = "<group>"; };
+		D799A2FA1472BA070036DB1F /* NWIOZcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOZcode.m; sourceTree = "<group>"; };
+		D799A31B1472BA150036DB1F /* NWIOCaseFlipperDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOCaseFlipperDemo.h; sourceTree = "<group>"; };
+		D799A31C1472BA150036DB1F /* NWIOCaseFlipperDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOCaseFlipperDemo.m; sourceTree = "<group>"; };
+		D799A31D1472BA150036DB1F /* NWIOConsoleDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOConsoleDemo.h; sourceTree = "<group>"; };
+		D799A31E1472BA150036DB1F /* NWIOConsoleDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOConsoleDemo.m; sourceTree = "<group>"; };
+		D799A31F1472BA150036DB1F /* NWIOCounterDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOCounterDemo.h; sourceTree = "<group>"; };
+		D799A3201472BA150036DB1F /* NWIOCounterDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOCounterDemo.m; sourceTree = "<group>"; };
+		D799A3211472BA150036DB1F /* NWIOCryptoDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOCryptoDemo.h; sourceTree = "<group>"; };
+		D799A3221472BA150036DB1F /* NWIOCryptoDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOCryptoDemo.m; sourceTree = "<group>"; };
+		D799A3231472BA150036DB1F /* NWIODeflateDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIODeflateDemo.h; sourceTree = "<group>"; };
+		D799A3241472BA150036DB1F /* NWIODeflateDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIODeflateDemo.m; sourceTree = "<group>"; };
+		D799A3251472BA150036DB1F /* NWIODigestDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIODigestDemo.h; sourceTree = "<group>"; };
+		D799A3261472BA150036DB1F /* NWIODigestDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIODigestDemo.m; sourceTree = "<group>"; };
+		D799A3271472BA150036DB1F /* NWIOEmptyDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOEmptyDemo.h; sourceTree = "<group>"; };
+		D799A3281472BA150036DB1F /* NWIOEmptyDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOEmptyDemo.m; sourceTree = "<group>"; };
+		D799A3291472BA150036DB1F /* NWIOHcodeDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOHcodeDemo.h; sourceTree = "<group>"; };
+		D799A32A1472BA150036DB1F /* NWIOHcodeDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOHcodeDemo.m; sourceTree = "<group>"; };
+		D799A32B1472BA150036DB1F /* NWIOLogDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOLogDemo.h; sourceTree = "<group>"; };
+		D799A32C1472BA150036DB1F /* NWIOLogDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOLogDemo.m; sourceTree = "<group>"; };
+		D799A32D1472BA150036DB1F /* NWIOMultipartDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOMultipartDemo.h; sourceTree = "<group>"; };
+		D799A32E1472BA150036DB1F /* NWIOMultipartDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOMultipartDemo.m; sourceTree = "<group>"; };
+		D799A32F1472BA150036DB1F /* NWIORandomDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIORandomDemo.h; sourceTree = "<group>"; };
+		D799A3301472BA150036DB1F /* NWIORandomDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIORandomDemo.m; sourceTree = "<group>"; };
+		D799A3311472BA150036DB1F /* NWIOZcodeDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOZcodeDemo.h; sourceTree = "<group>"; };
+		D799A3321472BA150036DB1F /* NWIOZcodeDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOZcodeDemo.m; sourceTree = "<group>"; };
+		D799A3331472BA150036DB1F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D799A3341472BA150036DB1F /* NWIOAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOAppDelegate.h; sourceTree = "<group>"; };
+		D799A3351472BA150036DB1F /* NWIOAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOAppDelegate.m; sourceTree = "<group>"; };
+		D799A3361472BA150036DB1F /* NWIODemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NWIODemo-Info.plist"; sourceTree = "<group>"; };
+		D799A3381472BA150036DB1F /* NWIOConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOConsole.h; sourceTree = "<group>"; };
+		D799A3391472BA150036DB1F /* NWIOConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOConsole.m; sourceTree = "<group>"; };
+		D799A33A1472BA150036DB1F /* NWIODemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIODemo.h; sourceTree = "<group>"; };
+		D799A33B1472BA150036DB1F /* NWIODemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIODemo.m; sourceTree = "<group>"; };
+		D799A33C1472BA150036DB1F /* NWIODemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIODemoViewController.h; sourceTree = "<group>"; };
+		D799A33D1472BA150036DB1F /* NWIODemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIODemoViewController.m; sourceTree = "<group>"; };
+		D799A33E1472BA150036DB1F /* NWIODemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NWIODemoViewController.xib; sourceTree = "<group>"; };
+		D799A33F1472BA150036DB1F /* NWIOMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOMenuViewController.h; sourceTree = "<group>"; };
+		D799A3401472BA150036DB1F /* NWIOMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOMenuViewController.m; sourceTree = "<group>"; };
+		D799A3411472BA150036DB1F /* NWIOMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NWIOMenuViewController.xib; sourceTree = "<group>"; };
+		D799A38C1472BA310036DB1F /* NWIOBidirectionalTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOBidirectionalTest.h; sourceTree = "<group>"; };
+		D799A38D1472BA310036DB1F /* NWIOBidirectionalTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOBidirectionalTest.m; sourceTree = "<group>"; };
+		D799A38E1472BA310036DB1F /* NWIOIdentityTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOIdentityTest.h; sourceTree = "<group>"; };
+		D799A38F1472BA310036DB1F /* NWIOIdentityTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOIdentityTest.m; sourceTree = "<group>"; };
+		D799A3901472BA310036DB1F /* NWIOTestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOTestData.h; sourceTree = "<group>"; };
+		D799A3911472BA310036DB1F /* NWIOTestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOTestData.m; sourceTree = "<group>"; };
+		D799A3921472BA310036DB1F /* NWIOTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NWIOTests-Info.plist"; sourceTree = "<group>"; };
+		D799A3941472BA310036DB1F /* test.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test.pdf; sourceTree = "<group>"; };
+		D799A3951472BA310036DB1F /* test.pdf.crypto */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.pdf.crypto; sourceTree = "<group>"; };
+		D799A3961472BA310036DB1F /* test.pdf.deflate */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.pdf.deflate; sourceTree = "<group>"; };
+		D799A39A1472BA310036DB1F /* NWIOCounterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOCounterTest.h; sourceTree = "<group>"; };
+		D799A39B1472BA310036DB1F /* NWIOCounterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOCounterTest.m; sourceTree = "<group>"; };
+		D799A39C1472BA310036DB1F /* NWIODigestTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIODigestTest.h; sourceTree = "<group>"; };
+		D799A39D1472BA310036DB1F /* NWIODigestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIODigestTest.m; sourceTree = "<group>"; };
+		D799A3A01472BA310036DB1F /* NWIOCGDataTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOCGDataTest.h; sourceTree = "<group>"; };
+		D799A3A11472BA310036DB1F /* NWIOCGDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOCGDataTest.m; sourceTree = "<group>"; };
+		D799A3A21472BA310036DB1F /* NWIOStitchTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOStitchTest.h; sourceTree = "<group>"; };
+		D799A3A31472BA310036DB1F /* NWIOStitchTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOStitchTest.m; sourceTree = "<group>"; };
+		D799A3A51472BA310036DB1F /* NWIOCaseFlipperTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOCaseFlipperTest.h; sourceTree = "<group>"; };
+		D799A3A61472BA310036DB1F /* NWIOCaseFlipperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOCaseFlipperTest.m; sourceTree = "<group>"; };
+		D799A3A71472BA310036DB1F /* NWIODeflateTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIODeflateTest.h; sourceTree = "<group>"; };
+		D799A3A81472BA310036DB1F /* NWIODeflateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIODeflateTest.m; sourceTree = "<group>"; };
+		D799A3A91472BA310036DB1F /* NWIOHcodeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOHcodeTest.h; sourceTree = "<group>"; };
+		D799A3AA1472BA310036DB1F /* NWIOHcodeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOHcodeTest.m; sourceTree = "<group>"; };
+		D799A3AB1472BA310036DB1F /* NWIOTransformTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOTransformTesting.h; sourceTree = "<group>"; };
+		D799A3AC1472BA310036DB1F /* NWIOTransformTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOTransformTesting.m; sourceTree = "<group>"; };
+		D799A3AD1472BA310036DB1F /* NWIOZcodeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOZcodeTest.h; sourceTree = "<group>"; };
+		D799A3AE1472BA310036DB1F /* NWIOZcodeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOZcodeTest.m; sourceTree = "<group>"; };
+		D799A3BF1472BAE00036DB1F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D75A3BC61472B95B00DA0DF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D799A3C01472BAE00036DB1F /* libz.dylib in Frameworks */,
+				D75A3BCE1472B95B00DA0DF9 /* UIKit.framework in Frameworks */,
+				D75A3BD01472B95B00DA0DF9 /* Foundation.framework in Frameworks */,
+				D75A3BD21472B95B00DA0DF9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D75A3BE91472B95B00DA0DF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D799A3C11472BBD60036DB1F /* CoreGraphics.framework in Frameworks */,
+				D75A3BEF1472B95B00DA0DF9 /* SenTestingKit.framework in Frameworks */,
+				D75A3BF01472B95B00DA0DF9 /* UIKit.framework in Frameworks */,
+				D75A3BF11472B95B00DA0DF9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D75A3BBE1472B95B00DA0DF9 = {
+			isa = PBXGroup;
+			children = (
+				D75A3BD31472B95B00DA0DF9 /* NWIO */,
+				D799A3191472BA150036DB1F /* NWIODemo */,
+				D75A3BF41472B95B00DA0DF9 /* NWIOTests */,
+				D75A3BCC1472B95B00DA0DF9 /* Frameworks */,
+				D75A3BCA1472B95B00DA0DF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D75A3BCA1472B95B00DA0DF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D75A3BC91472B95B00DA0DF9 /* NWIO.app */,
+				D75A3BED1472B95B00DA0DF9 /* NWIOTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D75A3BCC1472B95B00DA0DF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D799A3BF1472BAE00036DB1F /* libz.dylib */,
+				D75A3BCD1472B95B00DA0DF9 /* UIKit.framework */,
+				D75A3BCF1472B95B00DA0DF9 /* Foundation.framework */,
+				D75A3BD11472B95B00DA0DF9 /* CoreGraphics.framework */,
+				D75A3BEE1472B95B00DA0DF9 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D75A3BD31472B95B00DA0DF9 /* NWIO */ = {
+			isa = PBXGroup;
+			children = (
+				D799A2B71472BA070036DB1F /* Core */,
+				D799A2C41472BA070036DB1F /* External */,
+				D799A2C71472BA070036DB1F /* Extracts */,
+				D799A2CC1472BA070036DB1F /* Filters */,
+				D799A2DB1472BA070036DB1F /* NWIO.h */,
+				D799A2DC1472BA070036DB1F /* Sources */,
+				D799A2EB1472BA070036DB1F /* Tools */,
+				D799A2F01472BA070036DB1F /* Transforms */,
+			);
+			path = NWIO;
+			sourceTree = "<group>";
+		};
+		D75A3BF41472B95B00DA0DF9 /* NWIOTests */ = {
+			isa = PBXGroup;
+			children = (
+				D799A38B1472BA310036DB1F /* Integrated */,
+				D799A3921472BA310036DB1F /* NWIOTests-Info.plist */,
+				D799A3931472BA310036DB1F /* Resources */,
+				D799A3971472BA310036DB1F /* Unit */,
+			);
+			path = NWIOTests;
+			sourceTree = "<group>";
+		};
+		D799A2B71472BA070036DB1F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D799A2B81472BA070036DB1F /* NWIOAccess.h */,
+				D799A2B91472BA070036DB1F /* NWIOAccess.m */,
+				D799A2BA1472BA070036DB1F /* NWIOBase.h */,
+				D799A2BB1472BA070036DB1F /* NWIOBase.m */,
+				D799A2BC1472BA070036DB1F /* NWIOExtract.h */,
+				D799A2BD1472BA070036DB1F /* NWIOExtract.m */,
+				D799A2BE1472BA070036DB1F /* NWIOFilter.h */,
+				D799A2BF1472BA070036DB1F /* NWIOFilter.m */,
+				D799A2C01472BA070036DB1F /* NWIOStream.h */,
+				D799A2C11472BA070036DB1F /* NWIOStream.m */,
+				D799A2C21472BA070036DB1F /* NWIOTransform.h */,
+				D799A2C31472BA070036DB1F /* NWIOTransform.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D799A2C41472BA070036DB1F /* External */ = {
+			isa = PBXGroup;
+			children = (
+				D799A2C51472BA070036DB1F /* NWIOBio.h */,
+				D799A2C61472BA070036DB1F /* NWIOBio.m */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		D799A2C71472BA070036DB1F /* Extracts */ = {
+			isa = PBXGroup;
+			children = (
+				D799A2C81472BA070036DB1F /* NWIOCounter.h */,
+				D799A2C91472BA070036DB1F /* NWIOCounter.m */,
+				D799A2CA1472BA070036DB1F /* NWIODigest.h */,
+				D799A2CB1472BA070036DB1F /* NWIODigest.m */,
+			);
+			path = Extracts;
+			sourceTree = "<group>";
+		};
+		D799A2CC1472BA070036DB1F /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				D799A2CD1472BA070036DB1F /* NWIOChain.h */,
+				D799A2CE1472BA070036DB1F /* NWIOChain.m */,
+				D799A2CF1472BA070036DB1F /* NWIODropper.h */,
+				D799A2D01472BA070036DB1F /* NWIODropper.m */,
+				D799A2D11472BA070036DB1F /* NWIOIdentity.h */,
+				D799A2D21472BA070036DB1F /* NWIOIdentity.m */,
+				D799A2D31472BA070036DB1F /* NWIOLog.h */,
+				D799A2D41472BA070036DB1F /* NWIOLog.m */,
+				D799A2D51472BA070036DB1F /* NWIOMultipart.h */,
+				D799A2D61472BA070036DB1F /* NWIOMultipart.m */,
+				D799A2D71472BA070036DB1F /* NWIOProgress.h */,
+				D799A2D81472BA070036DB1F /* NWIOProgress.m */,
+				D799A2D91472BA070036DB1F /* NWIOStat.h */,
+				D799A2DA1472BA070036DB1F /* NWIOStat.m */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		D799A2DC1472BA070036DB1F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D799A2DD1472BA070036DB1F /* NWIOCGData.h */,
+				D799A2DE1472BA070036DB1F /* NWIOCGData.m */,
+				D799A2DF1472BA070036DB1F /* NWIOConstant.h */,
+				D799A2E01472BA070036DB1F /* NWIOConstant.m */,
+				D799A2E11472BA070036DB1F /* NWIOData.h */,
+				D799A2E21472BA070036DB1F /* NWIOData.m */,
+				D799A2E31472BA070036DB1F /* NWIONSStream.h */,
+				D799A2E41472BA070036DB1F /* NWIONSStream.m */,
+				D799A2E51472BA070036DB1F /* NWIORandom.h */,
+				D799A2E61472BA070036DB1F /* NWIORandom.m */,
+				D799A2E71472BA070036DB1F /* NWIOStitch.h */,
+				D799A2E81472BA070036DB1F /* NWIOStitch.m */,
+				D799A2E91472BA070036DB1F /* NWIOString.h */,
+				D799A2EA1472BA070036DB1F /* NWIOString.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D799A2EB1472BA070036DB1F /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D799A2EC1472BA070036DB1F /* NWIOConvenience.h */,
+				D799A2ED1472BA070036DB1F /* NWIOConvenience.m */,
+				D799A2EE1472BA070036DB1F /* NWIODrain.h */,
+				D799A2EF1472BA070036DB1F /* NWIODrain.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		D799A2F01472BA070036DB1F /* Transforms */ = {
+			isa = PBXGroup;
+			children = (
+				D799A2F11472BA070036DB1F /* NWIOCaseFlipper.h */,
+				D799A2F21472BA070036DB1F /* NWIOCaseFlipper.m */,
+				D799A2F31472BA070036DB1F /* NWIOCrypto.h */,
+				D799A2F41472BA070036DB1F /* NWIOCrypto.m */,
+				D799A2F51472BA070036DB1F /* NWIODeflate.h */,
+				D799A2F61472BA070036DB1F /* NWIODeflate.m */,
+				D799A2F71472BA070036DB1F /* NWIOHcode.h */,
+				D799A2F81472BA070036DB1F /* NWIOHcode.m */,
+				D799A2F91472BA070036DB1F /* NWIOZcode.h */,
+				D799A2FA1472BA070036DB1F /* NWIOZcode.m */,
+			);
+			path = Transforms;
+			sourceTree = "<group>";
+		};
+		D799A3191472BA150036DB1F /* NWIODemo */ = {
+			isa = PBXGroup;
+			children = (
+				D799A31A1472BA150036DB1F /* Demos */,
+				D799A3331472BA150036DB1F /* main.m */,
+				D799A3341472BA150036DB1F /* NWIOAppDelegate.h */,
+				D799A3351472BA150036DB1F /* NWIOAppDelegate.m */,
+				D799A3361472BA150036DB1F /* NWIODemo-Info.plist */,
+				D799A3371472BA150036DB1F /* UI */,
+			);
+			path = NWIODemo;
+			sourceTree = "<group>";
+		};
+		D799A31A1472BA150036DB1F /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				D799A31B1472BA150036DB1F /* NWIOCaseFlipperDemo.h */,
+				D799A31C1472BA150036DB1F /* NWIOCaseFlipperDemo.m */,
+				D799A31D1472BA150036DB1F /* NWIOConsoleDemo.h */,
+				D799A31E1472BA150036DB1F /* NWIOConsoleDemo.m */,
+				D799A31F1472BA150036DB1F /* NWIOCounterDemo.h */,
+				D799A3201472BA150036DB1F /* NWIOCounterDemo.m */,
+				D799A3211472BA150036DB1F /* NWIOCryptoDemo.h */,
+				D799A3221472BA150036DB1F /* NWIOCryptoDemo.m */,
+				D799A3231472BA150036DB1F /* NWIODeflateDemo.h */,
+				D799A3241472BA150036DB1F /* NWIODeflateDemo.m */,
+				D799A3251472BA150036DB1F /* NWIODigestDemo.h */,
+				D799A3261472BA150036DB1F /* NWIODigestDemo.m */,
+				D799A3271472BA150036DB1F /* NWIOEmptyDemo.h */,
+				D799A3281472BA150036DB1F /* NWIOEmptyDemo.m */,
+				D799A3291472BA150036DB1F /* NWIOHcodeDemo.h */,
+				D799A32A1472BA150036DB1F /* NWIOHcodeDemo.m */,
+				D799A32B1472BA150036DB1F /* NWIOLogDemo.h */,
+				D799A32C1472BA150036DB1F /* NWIOLogDemo.m */,
+				D799A32D1472BA150036DB1F /* NWIOMultipartDemo.h */,
+				D799A32E1472BA150036DB1F /* NWIOMultipartDemo.m */,
+				D799A32F1472BA150036DB1F /* NWIORandomDemo.h */,
+				D799A3301472BA150036DB1F /* NWIORandomDemo.m */,
+				D799A3311472BA150036DB1F /* NWIOZcodeDemo.h */,
+				D799A3321472BA150036DB1F /* NWIOZcodeDemo.m */,
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
+		D799A3371472BA150036DB1F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D799A3381472BA150036DB1F /* NWIOConsole.h */,
+				D799A3391472BA150036DB1F /* NWIOConsole.m */,
+				D799A33A1472BA150036DB1F /* NWIODemo.h */,
+				D799A33B1472BA150036DB1F /* NWIODemo.m */,
+				D799A33C1472BA150036DB1F /* NWIODemoViewController.h */,
+				D799A33D1472BA150036DB1F /* NWIODemoViewController.m */,
+				D799A33E1472BA150036DB1F /* NWIODemoViewController.xib */,
+				D799A33F1472BA150036DB1F /* NWIOMenuViewController.h */,
+				D799A3401472BA150036DB1F /* NWIOMenuViewController.m */,
+				D799A3411472BA150036DB1F /* NWIOMenuViewController.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D799A38B1472BA310036DB1F /* Integrated */ = {
+			isa = PBXGroup;
+			children = (
+				D799A38C1472BA310036DB1F /* NWIOBidirectionalTest.h */,
+				D799A38D1472BA310036DB1F /* NWIOBidirectionalTest.m */,
+				D799A38E1472BA310036DB1F /* NWIOIdentityTest.h */,
+				D799A38F1472BA310036DB1F /* NWIOIdentityTest.m */,
+				D799A3901472BA310036DB1F /* NWIOTestData.h */,
+				D799A3911472BA310036DB1F /* NWIOTestData.m */,
+			);
+			path = Integrated;
+			sourceTree = "<group>";
+		};
+		D799A3931472BA310036DB1F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D799A3941472BA310036DB1F /* test.pdf */,
+				D799A3951472BA310036DB1F /* test.pdf.crypto */,
+				D799A3961472BA310036DB1F /* test.pdf.deflate */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D799A3971472BA310036DB1F /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				D799A3981472BA310036DB1F /* Core */,
+				D799A3991472BA310036DB1F /* Extractors */,
+				D799A39E1472BA310036DB1F /* Filters */,
+				D799A39F1472BA310036DB1F /* Sources */,
+				D799A3A41472BA310036DB1F /* Transforms */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		D799A3981472BA310036DB1F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D799A3991472BA310036DB1F /* Extractors */ = {
+			isa = PBXGroup;
+			children = (
+				D799A39A1472BA310036DB1F /* NWIOCounterTest.h */,
+				D799A39B1472BA310036DB1F /* NWIOCounterTest.m */,
+				D799A39C1472BA310036DB1F /* NWIODigestTest.h */,
+				D799A39D1472BA310036DB1F /* NWIODigestTest.m */,
+			);
+			path = Extractors;
+			sourceTree = "<group>";
+		};
+		D799A39E1472BA310036DB1F /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		D799A39F1472BA310036DB1F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D799A3A01472BA310036DB1F /* NWIOCGDataTest.h */,
+				D799A3A11472BA310036DB1F /* NWIOCGDataTest.m */,
+				D799A3A21472BA310036DB1F /* NWIOStitchTest.h */,
+				D799A3A31472BA310036DB1F /* NWIOStitchTest.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D799A3A41472BA310036DB1F /* Transforms */ = {
+			isa = PBXGroup;
+			children = (
+				D799A3A51472BA310036DB1F /* NWIOCaseFlipperTest.h */,
+				D799A3A61472BA310036DB1F /* NWIOCaseFlipperTest.m */,
+				D799A3A71472BA310036DB1F /* NWIODeflateTest.h */,
+				D799A3A81472BA310036DB1F /* NWIODeflateTest.m */,
+				D799A3A91472BA310036DB1F /* NWIOHcodeTest.h */,
+				D799A3AA1472BA310036DB1F /* NWIOHcodeTest.m */,
+				D799A3AB1472BA310036DB1F /* NWIOTransformTesting.h */,
+				D799A3AC1472BA310036DB1F /* NWIOTransformTesting.m */,
+				D799A3AD1472BA310036DB1F /* NWIOZcodeTest.h */,
+				D799A3AE1472BA310036DB1F /* NWIOZcodeTest.m */,
+			);
+			path = Transforms;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D75A3BC81472B95B00DA0DF9 /* NWIO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D75A3BFF1472B95B00DA0DF9 /* Build configuration list for PBXNativeTarget "NWIO" */;
+			buildPhases = (
+				D75A3BC51472B95B00DA0DF9 /* Sources */,
+				D75A3BC61472B95B00DA0DF9 /* Frameworks */,
+				D75A3BC71472B95B00DA0DF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NWIO;
+			productName = NWIO;
+			productReference = D75A3BC91472B95B00DA0DF9 /* NWIO.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D75A3BEC1472B95B00DA0DF9 /* NWIOTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D75A3C021472B95B00DA0DF9 /* Build configuration list for PBXNativeTarget "NWIOTests" */;
+			buildPhases = (
+				D75A3BE81472B95B00DA0DF9 /* Sources */,
+				D75A3BE91472B95B00DA0DF9 /* Frameworks */,
+				D75A3BEA1472B95B00DA0DF9 /* Resources */,
+				D75A3BEB1472B95B00DA0DF9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D75A3BF31472B95B00DA0DF9 /* PBXTargetDependency */,
+			);
+			name = NWIOTests;
+			productName = NWIOTests;
+			productReference = D75A3BED1472B95B00DA0DF9 /* NWIOTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D75A3BC01472B95B00DA0DF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = D75A3BC31472B95B00DA0DF9 /* Build configuration list for PBXProject "NWIO" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D75A3BBE1472B95B00DA0DF9;
+			productRefGroup = D75A3BCA1472B95B00DA0DF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D75A3BC81472B95B00DA0DF9 /* NWIO */,
+				D75A3BEC1472B95B00DA0DF9 /* NWIOTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D75A3BC71472B95B00DA0DF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D799A3541472BA150036DB1F /* NWIODemoViewController.xib in Resources */,
+				D799A3561472BA150036DB1F /* NWIOMenuViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D75A3BEA1472B95B00DA0DF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D799A3B31472BA320036DB1F /* test.pdf in Resources */,
+				D799A3B41472BA320036DB1F /* test.pdf.crypto in Resources */,
+				D799A3B51472BA320036DB1F /* test.pdf.deflate in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D75A3BEB1472B95B00DA0DF9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D75A3BC51472B95B00DA0DF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D799A2FB1472BA070036DB1F /* NWIOAccess.m in Sources */,
+				D799A2FC1472BA070036DB1F /* NWIOBase.m in Sources */,
+				D799A2FD1472BA070036DB1F /* NWIOExtract.m in Sources */,
+				D799A2FE1472BA070036DB1F /* NWIOFilter.m in Sources */,
+				D799A2FF1472BA070036DB1F /* NWIOStream.m in Sources */,
+				D799A3001472BA070036DB1F /* NWIOTransform.m in Sources */,
+				D799A3021472BA070036DB1F /* NWIOCounter.m in Sources */,
+				D799A3031472BA070036DB1F /* NWIODigest.m in Sources */,
+				D799A3041472BA070036DB1F /* NWIOChain.m in Sources */,
+				D799A3051472BA070036DB1F /* NWIODropper.m in Sources */,
+				D799A3061472BA070036DB1F /* NWIOIdentity.m in Sources */,
+				D799A3071472BA070036DB1F /* NWIOLog.m in Sources */,
+				D799A3081472BA070036DB1F /* NWIOMultipart.m in Sources */,
+				D799A3091472BA070036DB1F /* NWIOProgress.m in Sources */,
+				D799A30A1472BA070036DB1F /* NWIOStat.m in Sources */,
+				D799A30B1472BA070036DB1F /* NWIOCGData.m in Sources */,
+				D799A30C1472BA070036DB1F /* NWIOConstant.m in Sources */,
+				D799A30D1472BA070036DB1F /* NWIOData.m in Sources */,
+				D799A30E1472BA070036DB1F /* NWIONSStream.m in Sources */,
+				D799A30F1472BA070036DB1F /* NWIORandom.m in Sources */,
+				D799A3101472BA070036DB1F /* NWIOStitch.m in Sources */,
+				D799A3111472BA070036DB1F /* NWIOString.m in Sources */,
+				D799A3121472BA070036DB1F /* NWIOConvenience.m in Sources */,
+				D799A3131472BA070036DB1F /* NWIODrain.m in Sources */,
+				D799A3141472BA070036DB1F /* NWIOCaseFlipper.m in Sources */,
+				D799A3151472BA070036DB1F /* NWIOCrypto.m in Sources */,
+				D799A3161472BA070036DB1F /* NWIODeflate.m in Sources */,
+				D799A3171472BA070036DB1F /* NWIOHcode.m in Sources */,
+				D799A3181472BA070036DB1F /* NWIOZcode.m in Sources */,
+				D799A3421472BA150036DB1F /* NWIOCaseFlipperDemo.m in Sources */,
+				D799A3431472BA150036DB1F /* NWIOConsoleDemo.m in Sources */,
+				D799A3441472BA150036DB1F /* NWIOCounterDemo.m in Sources */,
+				D799A3451472BA150036DB1F /* NWIOCryptoDemo.m in Sources */,
+				D799A3461472BA150036DB1F /* NWIODeflateDemo.m in Sources */,
+				D799A3471472BA150036DB1F /* NWIODigestDemo.m in Sources */,
+				D799A3481472BA150036DB1F /* NWIOEmptyDemo.m in Sources */,
+				D799A3491472BA150036DB1F /* NWIOHcodeDemo.m in Sources */,
+				D799A34A1472BA150036DB1F /* NWIOLogDemo.m in Sources */,
+				D799A34B1472BA150036DB1F /* NWIOMultipartDemo.m in Sources */,
+				D799A34C1472BA150036DB1F /* NWIORandomDemo.m in Sources */,
+				D799A34D1472BA150036DB1F /* NWIOZcodeDemo.m in Sources */,
+				D799A34E1472BA150036DB1F /* main.m in Sources */,
+				D799A34F1472BA150036DB1F /* NWIOAppDelegate.m in Sources */,
+				D799A3511472BA150036DB1F /* NWIOConsole.m in Sources */,
+				D799A3521472BA150036DB1F /* NWIODemo.m in Sources */,
+				D799A3531472BA150036DB1F /* NWIODemoViewController.m in Sources */,
+				D799A3551472BA150036DB1F /* NWIOMenuViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D75A3BE81472B95B00DA0DF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D799A3AF1472BA320036DB1F /* NWIOBidirectionalTest.m in Sources */,
+				D799A3B01472BA320036DB1F /* NWIOIdentityTest.m in Sources */,
+				D799A3B11472BA320036DB1F /* NWIOTestData.m in Sources */,
+				D799A3B61472BA320036DB1F /* NWIOCounterTest.m in Sources */,
+				D799A3B71472BA320036DB1F /* NWIODigestTest.m in Sources */,
+				D799A3B81472BA320036DB1F /* NWIOCGDataTest.m in Sources */,
+				D799A3B91472BA320036DB1F /* NWIOStitchTest.m in Sources */,
+				D799A3BA1472BA320036DB1F /* NWIOCaseFlipperTest.m in Sources */,
+				D799A3BC1472BA320036DB1F /* NWIOHcodeTest.m in Sources */,
+				D799A3BE1472BA320036DB1F /* NWIOZcodeTest.m in Sources */,
+				D715C61C1472BD160098156B /* NWIOTransformTesting.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D75A3BF31472B95B00DA0DF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D75A3BC81472B95B00DA0DF9 /* NWIO */;
+			targetProxy = D75A3BF21472B95B00DA0DF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D75A3BFD1472B95B00DA0DF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D75A3BFE1472B95B00DA0DF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D75A3C001472B95B00DA0DF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "NWIODemo/NWIODemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D75A3C011472B95B00DA0DF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "NWIODemo/NWIODemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D75A3C031472B95B00DA0DF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NWIO.app/NWIO";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "NWIOTests/NWIOTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D75A3C041472B95B00DA0DF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NWIO.app/NWIO";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "NWIOTests/NWIOTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D75A3BC31472B95B00DA0DF9 /* Build configuration list for PBXProject "NWIO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D75A3BFD1472B95B00DA0DF9 /* Debug */,
+				D75A3BFE1472B95B00DA0DF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D75A3BFF1472B95B00DA0DF9 /* Build configuration list for PBXNativeTarget "NWIO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D75A3C001472B95B00DA0DF9 /* Debug */,
+				D75A3C011472B95B00DA0DF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D75A3C021472B95B00DA0DF9 /* Build configuration list for PBXNativeTarget "NWIOTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D75A3C031472B95B00DA0DF9 /* Debug */,
+				D75A3C041472B95B00DA0DF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D75A3BC01472B95B00DA0DF9 /* Project object */;
+}
