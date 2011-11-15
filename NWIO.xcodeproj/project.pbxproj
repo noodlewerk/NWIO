@@ -288,11 +288,11 @@
 		D75A3BD31472B95B00DA0DF9 /* NWIO */ = {
 			isa = PBXGroup;
 			children = (
+				D799A2DB1472BA070036DB1F /* NWIO.h */,
 				D799A2B71472BA070036DB1F /* Core */,
 				D799A2C41472BA070036DB1F /* External */,
 				D799A2C71472BA070036DB1F /* Extracts */,
 				D799A2CC1472BA070036DB1F /* Filters */,
-				D799A2DB1472BA070036DB1F /* NWIO.h */,
 				D799A2DC1472BA070036DB1F /* Sources */,
 				D799A2EB1472BA070036DB1F /* Tools */,
 				D799A2F01472BA070036DB1F /* Transforms */,
@@ -304,9 +304,9 @@
 			isa = PBXGroup;
 			children = (
 				D799A38B1472BA310036DB1F /* Integrated */,
-				D799A3921472BA310036DB1F /* NWIOTests-Info.plist */,
 				D799A3931472BA310036DB1F /* Resources */,
 				D799A3971472BA310036DB1F /* Unit */,
+				D799A3921472BA310036DB1F /* NWIOTests-Info.plist */,
 			);
 			path = NWIOTests;
 			sourceTree = "<group>";
@@ -424,11 +424,11 @@
 			isa = PBXGroup;
 			children = (
 				D799A31A1472BA150036DB1F /* Demos */,
-				D799A3331472BA150036DB1F /* main.m */,
+				D799A3371472BA150036DB1F /* UI */,
 				D799A3341472BA150036DB1F /* NWIOAppDelegate.h */,
 				D799A3351472BA150036DB1F /* NWIOAppDelegate.m */,
+				D799A3331472BA150036DB1F /* main.m */,
 				D799A3361472BA150036DB1F /* NWIODemo-Info.plist */,
-				D799A3371472BA150036DB1F /* UI */,
 			);
 			path = NWIODemo;
 			sourceTree = "<group>";
