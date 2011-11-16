@@ -127,7 +127,6 @@ If you find any bugs, design flaws, or think NWIO is missing a feature, then sub
 ### Plans
 On the short term:
 
-- Add NSURLConnection delegate stream
 - Implement switching in NWIOAccess
 - Fix OpenSSL binding
 - Finish implementation NWIOCryptoAccess
