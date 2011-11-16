@@ -97,6 +97,8 @@
 		D73439381474546C0092A23A /* NWIODropperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIODropperTest.m; sourceTree = "<group>"; };
 		D734393B147458110092A23A /* NWIOConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOConnectionDelegate.h; sourceTree = "<group>"; };
 		D734393C147458110092A23A /* NWIOConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOConnectionDelegate.m; sourceTree = "<group>"; };
+		D734393E147466DD0092A23A /* NWIOConstantTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOConstantTest.h; sourceTree = "<group>"; };
+		D734393F147466DD0092A23A /* NWIOConstantTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOConstantTest.m; sourceTree = "<group>"; };
 		D75A3BC91472B95B00DA0DF9 /* NWIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NWIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75A3BCD1472B95B00DA0DF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D75A3BCF1472B95B00DA0DF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -556,6 +558,8 @@
 			children = (
 				D799A3A01472BA310036DB1F /* NWIOCGDataTest.h */,
 				D799A3A11472BA310036DB1F /* NWIOCGDataTest.m */,
+				D734393E147466DD0092A23A /* NWIOConstantTest.h */,
+				D734393F147466DD0092A23A /* NWIOConstantTest.m */,
 				D799A3A21472BA310036DB1F /* NWIOStitchTest.h */,
 				D799A3A31472BA310036DB1F /* NWIOStitchTest.m */,
 			);
