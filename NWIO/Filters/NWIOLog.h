@@ -17,7 +17,7 @@
 //  limitations under the License.
 //
 
-#import "NWIOFilter.h"
+#import "NWIOIdentity.h"
 
 
 /**
@@ -25,7 +25,7 @@
  *
  * NB: Calls to logBlock take place during the IO operation.
  */
-@interface NWIOLogStream : NWIOFilterStream
+@interface NWIOLogStream : NWIOIdentityStream
 @property (nonatomic, strong) NSString *tag;
 @property (nonatomic, strong) void(^logBlock)(NSString *);
 @end
@@ -35,7 +35,7 @@
  *
  * NB: Calls to logBlock take place during the IO operation.
  */
-@interface NWIOLogAccess : NWIOFilterAccess
+@interface NWIOLogAccess : NWIOIdentityAccess
 @property (nonatomic, strong) NSString *tag;
 @property (nonatomic, strong) void(^logBlock)(NSString *);
 @end

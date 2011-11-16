@@ -108,25 +108,25 @@ static NSUInteger const NWIOLogBufferWidth = 16;
 #pragma mark - NWIOStream subclass
 
 - (NSUInteger)read:(void *)buffer length:(NSUInteger)length {
-    NSUInteger result = [stream read:buffer length:length];
+    NSUInteger result = [super read:buffer length:length];
     [NWIOLogBase logWithBlock:logBlock tag:tag operation:[NSString stringWithFormat:@"read(%i)", length] buffer:buffer length:result];
     return result;
 }
 
 - (NSUInteger)readable:(const void **)buffer {
-    NSUInteger result = [stream readable:buffer];
+    NSUInteger result = [super readable:buffer];
     [NWIOLogBase logWithBlock:logBlock tag:tag operation:@"readable" buffer:buffer ? *buffer : NULL length:result];
     return result;
 }
 
 - (NSUInteger)write:(const void *)buffer length:(NSUInteger)length {
-    NSUInteger result = [stream write:buffer length:length];
+    NSUInteger result = [super write:buffer length:length];
     [NWIOLogBase logWithBlock:logBlock tag:tag operation:[NSString stringWithFormat:@"write(%i)", length] buffer:buffer length:result];
     return result;
 }
 
 - (NSUInteger)writable:(void **)buffer {
-    NSUInteger result = [stream writable:buffer];
+    NSUInteger result = [super writable:buffer];
     [NWIOLogBase logWithBlock:logBlock tag:tag operation:[NSString stringWithFormat:@"writable(%i), previous", result] buffer:writableBuffer length:writableLength];
     writableBuffer = *buffer;
     writableLength = result;
@@ -134,7 +134,7 @@ static NSUInteger const NWIOLogBufferWidth = 16;
 }
 
 - (void)unwritable:(NSUInteger)length {
-    [stream unwritable:length];
+    [super unwritable:length];
     [NWIOLogBase logWithBlock:logBlock tag:tag operation:[NSString stringWithFormat:@"unwritable(%i), previous", length] buffer:writableBuffer length:writableLength >= length ? writableLength - length : 0];
     writableBuffer = NULL;
     writableLength = 0;
@@ -144,13 +144,13 @@ static NSUInteger const NWIOLogBufferWidth = 16;
 #pragma mark - Controls
 
 - (BOOL)hasReadBytesAvailable {
-    BOOL result = [stream hasReadBytesAvailable];
+    BOOL result = [super hasReadBytesAvailable];
     [NWIOLogBase logWithBlock:logBlock tag:tag control:@"hasReadBytesAvailable" result:[NSNumber numberWithBool:result]];
     return result;
 }
 
 - (BOOL)hasWriteSpaceAvailable {
-    BOOL result = [stream hasWriteSpaceAvailable];
+    BOOL result = [super hasWriteSpaceAvailable];
     [NWIOLogBase logWithBlock:logBlock tag:tag control:@"hasWriteSpaceAvailable" result:[NSNumber numberWithBool:result]];
     return result;
 }
@@ -166,13 +166,13 @@ static NSUInteger const NWIOLogBufferWidth = 16;
 }
 
 - (NSError *)readError {
-    NSError *result = [stream readError];
+    NSError *result = [super readError];
     [NWIOLogBase logWithBlock:logBlock tag:tag control:@"readError" result:result];
     return result;
 }
 
 - (NSError *)writeError {
-    NSError *result = [stream writeError];
+    NSError *result = [super writeError];
     [NWIOLogBase logWithBlock:logBlock tag:tag control:@"writeError" result:result];
     return result;
 }
@@ -212,25 +212,25 @@ static NSUInteger const NWIOLogBufferWidth = 16;
 #pragma mark - NWIOAccess subclass
 
 - (NSUInteger)read:(void *)buffer range:(NSRange)range {
-    NSUInteger result = [access read:buffer range:range];
+    NSUInteger result = [super read:buffer range:range];
     [NWIOLogBase logWithBlock:logBlock tag:tag operation:[NSString stringWithFormat:@"read(%i,%i)", range.location, range.length] buffer:buffer length:result];
     return result;
 }
 
 - (NSUInteger)readable:(const void **)buffer location:(NSUInteger)location {
-    NSUInteger result = [access readable:buffer location:location];
+    NSUInteger result = [super readable:buffer location:location];
     [NWIOLogBase logWithBlock:logBlock tag:tag operation:[NSString stringWithFormat:@"readable(%i)", location] buffer:buffer ? *buffer : NULL length:result];
     return result;
 }
 
 - (NSUInteger)write:(const void *)buffer range:(NSRange)range {
-    NSUInteger result = [access write:buffer range:range];
+    NSUInteger result = [super write:buffer range:range];
     [NWIOLogBase logWithBlock:logBlock tag:tag operation:[NSString stringWithFormat:@"write(%i,%i)", range.location, range.length] buffer:buffer length:result];
     return result;
 }
 
 - (NSUInteger)writable:(void **)buffer location:(NSUInteger)location {
-    NSUInteger result = [access writable:buffer location:location];
+    NSUInteger result = [super writable:buffer location:location];
     [NWIOLogBase logWithBlock:logBlock tag:tag operation:[NSString stringWithFormat:@"writable(%i), previous", result] buffer:writableBuffer length:writableLength];
     writableBuffer = *buffer;
     writableLength = result;
@@ -238,11 +238,11 @@ static NSUInteger const NWIOLogBufferWidth = 16;
 }
 
 - (NSUInteger)inputLength {
-    return access.inputLength;
+    return super.inputLength;
 }
 
 - (NSUInteger)outputLength {
-    return access.outputLength;
+    return super.outputLength;
 }
 
 #pragma mark - Controls
