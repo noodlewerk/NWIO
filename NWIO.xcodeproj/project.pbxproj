@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D715C61C1472BD160098156B /* NWIOTransformTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = D799A3AC1472BA310036DB1F /* NWIOTransformTesting.m */; };
+		D73439391474546C0092A23A /* NWIODropperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D73439381474546C0092A23A /* NWIODropperTest.m */; };
 		D75A3BCE1472B95B00DA0DF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75A3BCD1472B95B00DA0DF9 /* UIKit.framework */; };
 		D75A3BD01472B95B00DA0DF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75A3BCF1472B95B00DA0DF9 /* Foundation.framework */; };
 		D75A3BD21472B95B00DA0DF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75A3BD11472B95B00DA0DF9 /* CoreGraphics.framework */; };
@@ -91,6 +92,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D73439371474546C0092A23A /* NWIODropperTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIODropperTest.h; sourceTree = "<group>"; };
+		D73439381474546C0092A23A /* NWIODropperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIODropperTest.m; sourceTree = "<group>"; };
 		D75A3BC91472B95B00DA0DF9 /* NWIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NWIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75A3BCD1472B95B00DA0DF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D75A3BCF1472B95B00DA0DF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -537,6 +540,8 @@
 		D799A39E1472BA310036DB1F /* Filters */ = {
 			isa = PBXGroup;
 			children = (
+				D73439371474546C0092A23A /* NWIODropperTest.h */,
+				D73439381474546C0092A23A /* NWIODropperTest.m */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -742,6 +747,7 @@
 				D799A3BC1472BA320036DB1F /* NWIOHcodeTest.m in Sources */,
 				D799A3BE1472BA320036DB1F /* NWIOZcodeTest.m in Sources */,
 				D715C61C1472BD160098156B /* NWIOTransformTesting.m in Sources */,
+				D73439391474546C0092A23A /* NWIODropperTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

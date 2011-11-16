@@ -1,5 +1,5 @@
 //
-//  NWIODropper.h
+//  NWIODropperTest.h
 //  NWIO
 //
 //  Copyright 2011 Noodlewerk
@@ -17,10 +17,8 @@
 //  limitations under the License.
 //
 
-#import "NWIOFilter.h"
+#import <SenTestingKit/SenTestingKit.h>
 
 
-@interface NWIODropperStream : NWIOFilterStream
-@property (nonatomic, assign) NSUInteger dropSize;
-- (id)initWithStream:(NWIOStream *)stream dropSize:(NSUInteger)dropSize;
+@interface NWIODropperTest : SenTestCase
 @end

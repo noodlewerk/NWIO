@@ -42,11 +42,11 @@
 #pragma mark - NWIOStream subclass
 
 - (NSUInteger)read:(void *)buffer length:(NSUInteger)length {
-    return [super read:buffer length:dropSize < length ? dropSize : length];
+    return [stream read:buffer length:dropSize < length ? dropSize : length];
 }
 
 - (NSUInteger)write:(const void *)buffer length:(NSUInteger)length {
-    return [super write:buffer length:dropSize < length ? dropSize : length];
+    return [stream write:buffer length:dropSize < length ? dropSize : length];
 }
 
 @end
