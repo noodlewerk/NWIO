@@ -86,7 +86,7 @@
                 read = [source readable:(const void **)&buffer];
             }
             if (!read) {
-                if ([source hasReadEnded]) {
+                if ([source hasReadEndedOrFailed:nil]) {
                     break;
                 }
                 continue;
@@ -95,7 +95,7 @@
         if (sink) {
             NSUInteger written = [sink write:buffer length:read];
             if (!written) {
-                if ([sink hasWriteEnded]) {
+                if ([sink hasWriteEndedOrFailed:nil]) {
                     break;
                 }
                 continue;

@@ -95,7 +95,7 @@
         NSUInteger read = [stream read:buffer length:length];
         if (read) {
             [self write:[NSString stringWithFormat:@"%.*s", read, buffer]];
-        } else if ([stream hasReadEnded]) {
+        } else if ([stream hasReadEndedOrFailed:nil]) {
             break;
         }
     }

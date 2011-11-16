@@ -52,11 +52,11 @@
 /**
  * Convenience funtion to test if we're done reading by combining hasReadBytesAvailable and readError.
  */
-- (BOOL)hasReadEnded;
+- (BOOL)hasReadEndedOrFailed:(NSError **)error;
 
 /**
  * Convenience funtion to test if we're done writing by combining hasWriteSpaceAvailable and writeError.
  */
-- (BOOL)hasWriteEnded;
+- (BOOL)hasWriteEndedOrFailed:(NSError **)error;
 
 @end

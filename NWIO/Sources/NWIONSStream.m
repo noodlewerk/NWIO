@@ -217,7 +217,7 @@
 
 - (NSInteger)read:(uint8_t *)buffer maxLength:(NSUInteger)length {
     NSUInteger result = [stream read:buffer length:length];
-    if (result == 0 && [stream hasReadEnded]) {
+    if (result == 0 && [stream hasReadEndedOrFailed:nil]) {
         // TODO: handle errors
         [self readDecoy];
     }
@@ -226,7 +226,7 @@
 
 - (BOOL)getBuffer:(uint8_t **)buffer length:(NSUInteger *)length {
     *length = [stream readable:(const void **)buffer];
-    if (*length == 0 && [stream hasReadEnded]) {
+    if (*length == 0 && [stream hasReadEndedOrFailed:nil]) {
         // TODO: handle errors
         [self readDecoy];
     }

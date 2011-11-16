@@ -252,28 +252,39 @@
 
 #pragma mark - Controls convenience
 
-- (BOOL)hasReadEnded {
+- (BOOL)hasReadEndedOrFailed:(NSError **)error {
     if (![self hasReadBytesAvailable]) {
+        if (error) {
+            *error = nil;
+        }
         return YES;
     }
-    NSError *error = [self readError];
-    if (error) {
-        NSAssert(NO, @"Error in read: %@", error);
+    NSError *e = [self readError];
+    if (e) {
+        if (error) {
+            *error = e;
+        }
         return YES;
     }
     return NO;
 }
 
-- (BOOL)hasWriteEnded {
+- (BOOL)hasWriteEndedOrFailed:(NSError **)error {
     if (![self hasWriteSpaceAvailable]) {
+        if (error) {
+            *error = nil;
+        }
         return YES;
     }
-    NSError *error = [self writeError];
-    if (error) {
-        NSAssert(NO, @"Error in write: %@", error);
+    NSError *e = [self writeError];
+    if (e) {
+        if (error) {
+            *error = e;
+        }
         return YES;
     }
     return NO;
+
 }
 
 @end
