@@ -78,10 +78,11 @@
     // stitch it
     NWIODataStream *headStream = [[NWIODataStream alloc] initWithInput:headData];
     NWIODataStream *footStream = [[NWIODataStream alloc] initWithInput:footData];
-    NWIOStitchStream *stitch = [[NWIOStitchStream alloc] initWithStreams:[NSArray arrayWithObjects:headStream, original, footStream, nil]];
-    // replace original stream
-
-    stream = stitch;
+    if (original) {
+        stream = [[NWIOStitchStream alloc] initWithStreams:[NSArray arrayWithObjects:headStream, original, footStream, nil]];
+    } else {
+        stream = [[NWIOStitchStream alloc] initWithStreams:[NSArray arrayWithObjects:headStream, footStream, nil]];
+    }
 }
 
 - (void)configureRequest:(NSMutableURLRequest *)request streamLength:(NSUInteger)streamLength {
