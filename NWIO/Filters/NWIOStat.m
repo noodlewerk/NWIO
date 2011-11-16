@@ -85,7 +85,7 @@
 #pragma mark - NWIOStream subclass
 
 - (NSUInteger)read:(void *)buffer length:(NSUInteger)length {
-    NSUInteger result = [stream read:buffer length:length];
+    NSUInteger result = [super read:buffer length:length];
     if (result > 0) {
         [lengthStat count:result];
     }
@@ -93,7 +93,7 @@
 }
 
 - (NSUInteger)readable:(const void **)buffer {
-    NSUInteger result = [stream readable:buffer];
+    NSUInteger result = [super readable:buffer];
     if (result > 0) {
         [lengthStat count:result];
     }
@@ -101,7 +101,7 @@
 }
 
 - (NSUInteger)write:(const void *)buffer length:(NSUInteger)length {
-    NSUInteger result = [stream write:buffer length:length];
+    NSUInteger result = [super write:buffer length:length];
     if (result > 0) {
         [lengthStat count:result];
     }
@@ -109,7 +109,7 @@
 }
 
 - (NSUInteger)writable:(void **)buffer {
-    NSUInteger result = [stream writable:buffer];
+    NSUInteger result = [super writable:buffer];
     if (result > 0) {
         [lengthStat count:result];
     }
@@ -117,7 +117,7 @@
 }
 
 - (void)unwritable:(NSUInteger)length {
-    [stream unwritable:length];
+    [super unwritable:length];
     [lengthStat uncount:length];
 }
 
@@ -152,28 +152,28 @@
 #pragma mark - NWIOAccess subclass
 
 - (NSUInteger)read:(void *)buffer range:(NSRange)range {
-    NSUInteger result = [access read:buffer range:range];
+    NSUInteger result = [super read:buffer range:range];
     [locationStat count:range.location];
     [lengthStat count:result];
     return result;
 }
 
 - (NSUInteger)readable:(const void **)buffer location:(NSUInteger)location {
-    NSUInteger result = [access readable:buffer location:location];
+    NSUInteger result = [super readable:buffer location:location];
     [locationStat count:location];
     [lengthStat count:result];
     return result;
 }
 
 - (NSUInteger)write:(const void *)buffer range:(NSRange)range {
-    NSUInteger result = [access write:buffer range:range];
+    NSUInteger result = [super write:buffer range:range];
     [locationStat count:range.location];
     [lengthStat count:result];
     return result;
 }
 
 - (NSUInteger)writable:(void **)buffer location:(NSUInteger)location {
-    NSUInteger result = [access writable:buffer location:location];
+    NSUInteger result = [super writable:buffer location:location];
     [locationStat count:location];
     [lengthStat count:result];
     return result;

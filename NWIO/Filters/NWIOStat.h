@@ -17,7 +17,7 @@
 //  limitations under the License.
 //
 
-#import "NWIOFilter.h"
+#import "NWIOIdentity.h"
 
 
 /**
@@ -36,7 +36,7 @@
 /**
  * Records statistics of data passing though this filter, without modifiying it.
  */
-@interface NWIOStatStream : NWIOFilterStream
+@interface NWIOStatStream : NWIOIdentityStream
 @property (nonatomic, strong, readonly) NWIOStatInteger *lengthStat;
 @end
 
@@ -44,7 +44,7 @@
 /**
  * Records statistics of data passing though this filter, without modifiying it.
  */
-@interface NWIOStatAccess : NWIOFilterAccess
+@interface NWIOStatAccess : NWIOIdentityAccess
 @property (nonatomic, strong, readonly) NWIOStatInteger *locationStat;
 @property (nonatomic, strong, readonly) NWIOStatInteger *lengthStat;
 @end
