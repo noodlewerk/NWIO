@@ -17,12 +17,12 @@
 //  limitations under the License.
 //
 
-#import "NWIOFilter.h"
+#import "NWIOIdentity.h"
 
 /**
  * An identity filter that counts processed bytes and calls blocks according to progress.
  */
-@interface NWIOProgressStream : NWIOFilterStream
+@interface NWIOProgressStream : NWIOIdentityStream
 
 /**
  * Keeps track of the total number of bytes streamed

@@ -74,25 +74,25 @@
 #pragma mark - NWIOStream subclass
 
 - (NSUInteger)read:(void *)buffer length:(NSUInteger)length {
-    NSUInteger result = [stream read:buffer length:length];
+    NSUInteger result = [super read:buffer length:length];
     [self progress:result];
     return result;
 }
 
 - (NSUInteger)readable:(const void **)buffer {
-    NSUInteger result = [stream readable:buffer];
+    NSUInteger result = [super readable:buffer];
     [self progress:result];
     return result;
 }
 
 - (NSUInteger)write:(const void *)buffer length:(NSUInteger)length {
-    NSUInteger result = [stream write:buffer length:length];
+    NSUInteger result = [super write:buffer length:length];
     [self progress:result];
     return result;
 }
 
 - (NSUInteger)writable:(void **)buffer {
-    NSUInteger result = [stream writable:buffer];
+    NSUInteger result = [super writable:buffer];
     [self progress:result];
     return result;
 }
