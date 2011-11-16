@@ -29,6 +29,7 @@
     if (stream) {
         return [stream read:buffer length:length];
     } else {
+        // TODO: reconsider this; maybe not read zeros, only allow writing
         memset(buffer, 0, length);
         return length;
     }
@@ -98,6 +99,7 @@
     if (access) {
         return [access read:buffer range:range];
     } else {
+        // TODO: reconsider this; maybe not read zeros, only allow writing
         memset(buffer, 0, range.length);
         return range.length;
     }
