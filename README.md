@@ -125,16 +125,9 @@ If you find any bugs, design flaws, or think NWIO is missing a feature, then sub
 
 
 ### Plans
-On the short term:
-
-- Implement switching in NWIOAccess
-- Fix OpenSSL binding
-- Finish implementation NWIOCryptoAccess
-
-In the long run:
-
 - Add many more sources, filters, transforms, and extracts. We will welcome your requests.
 - Extend beyond bytes, e.g. to text (UTF8), with a NSScanner-like implementation, or a streaming XML/JSON parser.
+- Check GitHub milestones for more plans.
 
 
 ### License
