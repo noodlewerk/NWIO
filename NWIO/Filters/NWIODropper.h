@@ -17,10 +17,10 @@
 //  limitations under the License.
 //
 
-#import "NWIOFilter.h"
+#import "NWIOIdentity.h"
 
 
-@interface NWIODropperStream : NWIOFilterStream
+@interface NWIODropperStream : NWIOIdentityStream
 @property (nonatomic, assign) NSUInteger dropSize;
 - (id)initWithStream:(NWIOStream *)stream dropSize:(NSUInteger)dropSize;
 @end
