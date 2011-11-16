@@ -33,6 +33,7 @@
 
 // Filters
 #import "NWIOChain.h"
+#import "NWIOConnectionDelegate.h"
 #import "NWIODropper.h"
 #import "NWIOIdentity.h"
 #import "NWIOLog.h"

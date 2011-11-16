@@ -50,21 +50,40 @@ static NSUInteger const NWIOUploadKb = 100;
     LogDrain(multipart);
     LogWaitOrAbort();
     
-    Log(@"A now for a practical example: let's upload %iK of random data to myspace.com", NWIOUploadKb);
+    LogText(@"A now for a practical example: let's upload %iK of random data to myspace.com", NWIOUploadKb);
     NWIORandomStream *random = [[NWIORandomStream alloc] initWithInputLength:NWIOUploadKb * 1000 outputLength:0];
     multipart = [[NWIOMultipartStream alloc] initWithStream:random];
     multipart.contentFilename = @"random";
     [multipart compose];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.myspace.com/"]];
     [multipart configureRequest:request streamLength:random.inputLength];
-    NSHTTPURLResponse *response = nil;
-    NSError *error = nil;
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    LogLine();
-    if (!data || error) {
-        Log(@"Something went wrong: %@", error.localizedDescription);
-    } else {
-        Log(@"That worked well, we received %i bytes response with status code %i", data.length, response.statusCode);
+    NWIOProgressStream *counter = [[NWIOProgressStream alloc] init];
+    NWIOConnectionDelegate *delegate = [[NWIOConnectionDelegate alloc] initWithStream:counter];
+    __block BOOL working = YES;
+    delegate.didFailBlock = ^(NSError *error){
+        Log(@"\n");
+        Log(@"Something went wrong: %@", error);
+        working = NO;
+    };
+    delegate.didFinishBlock = ^(NSHTTPURLResponse *response){
+        Log(@"\n");
+        if (response.statusCode == 200) {
+            Log(@"That worked well, we received %i bytes response with status code %i.", counter.streamedLength, response.statusCode);
+        } else {
+            Log(@"Unfortunately we got a response with status code %i.", response.statusCode);
+        }
+        working = NO;
+    };
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:delegate startImmediately:NO];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{[connection start];}];
+    for (NSUInteger i = 0; i < 10 && working; i++) {
+        LogText(@".");
+        [NSThread sleepForTimeInterval:1];
+    }
+    if (working) {
+        [connection cancel];
+        Log(@"\n");
+        Log(@"That took too long, cancelled request.");
     }
 }
 
