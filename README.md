@@ -16,7 +16,7 @@ With sufficient memory available, this is an efficient approach to most data pro
 A more scalable solution is to process the data not as a whole, but in separate chunks of data. This however requires a bit more care, as chunks have to be glued together. NWIO is an extensible framework that provides a basis for building custom operations, as well as implementations for a lot of common tasks. For example, computing the checksum using NWIO goes like this:
 
     NWIODigestStream *digester = [[NWIODigestStream alloc] initWithInputURL:fileURL];
-    [digester drain];
+    [digester drainFromSource];
     unsigned char *checksum = [[digester inputDigest] bytes];
 
 Instead of reading all data in a single line of code, NWIO typically splits this into a declaration and an execution line. The first line sets up the stream, a digesting stream in this case. The second pulls all data from the file through this stream, allowing it to compute the file's digest.
@@ -67,7 +67,7 @@ NIWO offers both sequential streaming and direct access variants of most operati
 Direct access on the other hand, operates only on a given range of the data, allowing specific parts to be processed. This is similar to NSData, but without having access to a single pointer of all data. All direct operations inherit from the NWIOAccess class.
 
 
-#### Memory ownership
+#### Memory allocation
 All reading and writing operations come in two flavors: active and passive. Active reading takes an array as input and fills it with read data, while passive reading returns an array with read data. Similarly, active writing takes an array of data to write, while passive writing returns an array in which you can write your data directly.
 
 The distinction between active and passive exists for performance reasons. Active operations are used when an array of data has already been allocated and only needs processing, e.g. written to disk. This leaves the decision whether to copy this array or process it directly to the callee.
@@ -125,6 +125,15 @@ If you find any bugs, design flaws, or think NWIO is missing a feature, then sub
 
 
 ### Plans
+On the short term:
+
+- Add NSURLConnection delegate stream
+- Implement switching in NWIOAccess
+- Fix OpenSSL binding
+- Finish implementation NWIOCryptoAccess
+
+In the long run:
+
 - Add many more sources, filters, transforms, and extracts. We will welcome your requests.
 - Extend beyond bytes, e.g. to text (UTF8), with a NSScanner-like implementation, or a streaming XML/JSON parser.
 
