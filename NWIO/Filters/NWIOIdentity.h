@@ -21,6 +21,11 @@
 
 /**
  * A filter that does absolutely nothing. Mostly used for subclassing.
+ *
+ * If no stream is assigned to this filter, it will function alike a zero constant stream.
  */
 @interface NWIOIdentityStream : NWIOFilterStream
+@end
+
+@interface NWIOIdentityAccess : NWIOFilterAccess
 @end

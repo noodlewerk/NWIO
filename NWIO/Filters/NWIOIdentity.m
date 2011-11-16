@@ -26,19 +26,36 @@
 #pragma mark - NWIOStream subclass
 
 - (NSUInteger)read:(void *)buffer length:(NSUInteger)length {
-    return [stream read:buffer length:length];
+    if (stream) {
+        return [stream read:buffer length:length];
+    } else {
+        memset(buffer, 0, length);
+        return length;
+    }
 }
 
 - (NSUInteger)readable:(const void **)buffer {
-    return [stream readable:buffer];
+    if (stream) {
+        return [stream readable:buffer];
+    } else {
+        return [super readable:buffer];
+    }
 }
 
 - (NSUInteger)write:(const void *)buffer length:(NSUInteger)length {
-    return [stream write:buffer length:length];
+    if (stream) {
+        return [stream write:buffer length:length];
+    } else {
+        return length;
+    }
 }
 
 - (NSUInteger)writable:(void **)buffer {
-    return [stream writable:buffer];
+    if (stream) {
+        return [stream writable:buffer];
+    } else {
+        return [super writable:buffer];
+    }
 }
 
 - (void)unwritable:(NSUInteger)length {
@@ -66,6 +83,59 @@
 - (void)closeWrite {
     // no need to call super
     [stream closeWrite];
+}
+
+@end
+
+
+
+@implementation NWIOIdentityAccess
+
+
+#pragma mark - NWIOAccess subclass
+
+- (NSUInteger)read:(void *)buffer range:(NSRange)range {
+    if (access) {
+        return [access read:buffer range:range];
+    } else {
+        memset(buffer, 0, range.length);
+        return range.length;
+    }
+}
+
+- (NSUInteger)readable:(const void **)buffer location:(NSUInteger)location {
+    if (access) {
+        return [access readable:buffer location:location];
+    } else {
+        return [super readable:buffer location:location];
+    }
+}
+
+- (NSUInteger)write:(const void *)buffer range:(NSRange)range {
+    if (access) {
+        return [access write:buffer range:range];
+    } else {
+        return range.length;
+    }
+}
+
+- (NSUInteger)writable:(void **)buffer location:(NSUInteger)location {
+    if (access) {
+        return [access writable:buffer location:location];
+    } else {
+        return [super writable:buffer location:location];
+    }
+}
+
+
+#pragma mark - Control
+
+- (NSUInteger)inputLength {
+    return access.inputLength;
+}
+
+- (NSUInteger)outputLength {
+    return access.outputLength;
 }
 
 @end
