@@ -50,7 +50,7 @@ static NSString * const NWIOStatusKey = @"status";
 
 #pragma mark - NWIOTransform subclass
 
-// TODO: add support for transparent (NULL) buffers
+// TODO: add support for zero (NULL) buffers, like in NWIODeflate
 
 // turns zip into bytes (inflate)
 - (BOOL)transformBackwardFromBuffer:(const unsigned char *)fromBuffer fromLength:(NSUInteger)fromLength fromInc:(NSUInteger *)fromInc toBuffer:(unsigned char *)toBuffer toLength:(NSUInteger)toLength toInc:(NSUInteger *)toInc error:(NSError **)error {
@@ -298,7 +298,7 @@ static NSString * const NWIOStatusKey = @"status";
         buffer += moved;
         bufferLength -= moved;
     }
-    
+
     // read leftovers
     if (bufferLength && readLength >= kCCBlockSizeAES128) {
         if (!blockBuffer) {
@@ -318,7 +318,7 @@ static NSString * const NWIOStatusKey = @"status";
 //        buffer += bufferLength;
         bufferLength -= bufferLength;
     }
-    
+
     NSAssert(range.length >= bufferLength, @"");
     return range.length - bufferLength;
 }

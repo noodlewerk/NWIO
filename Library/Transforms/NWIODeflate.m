@@ -26,10 +26,10 @@ static NSString * const NWIOMessageKey = @"message";
 @implementation NWIODeflateTransform {
     z_stream *backwardStream;
     z_stream *forwardStream;
-    void *transparentBuffer;
+    void *substituteBuffer;
 }
 
-@synthesize transparentBufferLength;
+@synthesize substituteBufferLength;
 
 
 #pragma mark - Object life cycle
@@ -41,10 +41,10 @@ static NSString * const NWIOMessageKey = @"message";
     [self resetForward];
 }
 
-- (void)setTransparentBufferLength:(NSUInteger)_transparentBufferLength {
-    if (!transparentBuffer) {
+- (void)setsubstituteBufferLength:(NSUInteger)_substituteBufferLength {
+    if (!substituteBuffer) {
         // buffer not yet in use, so we can change length
-        transparentBufferLength = _transparentBufferLength;
+        substituteBufferLength = _substituteBufferLength;
     } else {
         NSLog(@"Unable to change bufferLength after first transform operation");
     }
@@ -65,23 +65,21 @@ static NSString * const NWIOMessageKey = @"message";
 
 #pragma mark - NWIOTransform subclass
 
-// TODO: add support for transparent (NULL) buffers
-
 // turns zip into bytes (inflate)
 - (BOOL)transformBackwardFromBuffer:(const unsigned char *)fromBuffer fromLength:(NSUInteger)fromLength fromInc:(NSUInteger *)fromInc toBuffer:(unsigned char *)toBuffer toLength:(NSUInteger)toLength toInc:(NSUInteger *)toInc error:(NSError **)error {
-    NSAssert(fromBuffer, @"Can't inflate transparent bytes");
+    NSAssert(fromBuffer, @"Can't inflate NULL bytes");
     if (!toBuffer) {
-        // output is transparent, so use substitute
-        if (!transparentBuffer) {
-            if (!transparentBufferLength) {
-                transparentBufferLength = NWIODefaultBufferLength;
+        // output is NULL, so use substitute
+        if (!substituteBuffer) {
+            if (!substituteBufferLength) {
+                substituteBufferLength = NWIODefaultBufferLength;
             }
-            transparentBuffer = malloc(transparentBufferLength);
-            memset(transparentBuffer, 0, transparentBufferLength);
+            substituteBuffer = malloc(substituteBufferLength);
+            memset(substituteBuffer, 0, substituteBufferLength);
         }
-        toBuffer = transparentBuffer;
-        if (toLength > transparentBufferLength) {
-            toLength = transparentBufferLength;
+        toBuffer = substituteBuffer;
+        if (toLength > substituteBufferLength) {
+            toLength = substituteBufferLength;
         }
     }
     if (!backwardStream) {
@@ -114,19 +112,19 @@ static NSString * const NWIOMessageKey = @"message";
 
 // turns bytes into zip (deflate)
 - (BOOL)transformForwardFromBuffer:(const unsigned char *)fromBuffer fromLength:(NSUInteger)fromLength fromInc:(NSUInteger *)fromInc toBuffer:(unsigned char *)toBuffer toLength:(NSUInteger)toLength toInc:(NSUInteger *)toInc error:(NSError **)error {
-    NSAssert(fromBuffer, @"Can't deflate transparent bytes");
+    NSAssert(fromBuffer, @"Can't deflate NULL bytes");
     if (!toBuffer) {
-        // output is transparent, so use substitute
-        if (!transparentBuffer) {
-            if (!transparentBufferLength) {
-                transparentBufferLength = NWIODefaultBufferLength;
+        // output is NULL, so use substitute
+        if (!substituteBuffer) {
+            if (!substituteBufferLength) {
+                substituteBufferLength = NWIODefaultBufferLength;
             }
-            transparentBuffer = malloc(transparentBufferLength);
-            memset(transparentBuffer, 0, transparentBufferLength);
+            substituteBuffer = malloc(substituteBufferLength);
+            memset(substituteBuffer, 0, substituteBufferLength);
         }
-        toBuffer = transparentBuffer;
-        if (toLength > transparentBufferLength) {
-            toLength = transparentBufferLength;
+        toBuffer = substituteBuffer;
+        if (toLength > substituteBufferLength) {
+            toLength = substituteBufferLength;
         }
     }
     if (!forwardStream) {

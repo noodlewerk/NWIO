@@ -28,9 +28,9 @@
 @interface NWIODeflateTransform : NWIOTransform
 
 /**
- * The length of the substitute buffer that is allocated (and reused) when a transparent buffer is passed as toBuffer.
+ * The length of the substitute buffer that is allocated (and reused) when a NULL buffer is passed as toBuffer.
  */
-@property (nonatomic, assign) NSUInteger transparentBufferLength;
+@property (nonatomic, assign) NSUInteger substituteBufferLength;
 
 @end
 
