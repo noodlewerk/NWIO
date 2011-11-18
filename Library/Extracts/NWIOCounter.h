@@ -20,14 +20,40 @@
 #import "NWIOExtract.h"
 
 
+/**
+ * Counts the occurrence of byte values (0 to 255).
+ * @see NWIOCounterStream
+ */
 @interface NWIOCounterExtract : NWIOExtract
-- (NSUInteger)frequencyOfByte:(unsigned char)byte;
-@end
 
 /**
- * Convenience stream around NWIOCounterExtract
+ * Provides the frequency of a given byte value.
+ * @param byte A byte value (0 to 255).
+ * @return The number of occurrences
+ */
+- (NSUInteger)frequencyOfByte:(unsigned char)byte;
+
+@end
+
+
+/**
+ * Convenience stream around NWIOCounterExtract.
+ * @see NWIOCounterExtract
  */
 @interface NWIOCounterStream : NWIOExtractStream
+
+/**
+ * Forwards to underlying input extract.
+ * @param byte A byte value (0 to 255).
+ * @see [NWIOCounterExtract frequencyOfByte:]
+ */
 - (NSUInteger)inputFrequency:(unsigned char)byte;
+
+/**
+ * Forwards to underlying output extract.
+ * @param byte A byte value (0 to 255).
+ * @see [NWIOCounterExtract frequencyOfByte:]
+ */
 - (NSUInteger)outputFrequency:(unsigned char)byte;
+
 @end

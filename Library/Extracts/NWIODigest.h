@@ -30,18 +30,54 @@ typedef enum {
 } NWIODigestMethod;
 
 
+/**
+ * Hashes passing data using NWIODigestMethod.
+ * @see NWIODigestStream
+ * @see http://en.wikipedia.org/wiki/Message_digest
+ */
 @interface NWIODigestExtract : NWIOExtract
-@property (nonatomic, assign) NWIODigestMethod method;
-@property (nonatomic, assign, readonly) NSData *digest;
-- (id)initWithStream:(NWIOStream *)stream method:(NWIODigestMethod)method;
-@end
 
 /**
- * Convenience stream around NWIODigestExtract
+ * The cryptographic hash function used.
+ */
+@property (nonatomic, assign) NWIODigestMethod method;
+
+/**
+ * The hash value data of all data hashed so far. 
+ */
+@property (nonatomic, assign, readonly) NSData *digest;
+
+@end
+
+
+/**
+ * Convenience stream around NWIODigestExtract.
+ * @see NWIODigestExtract
  */
 @interface NWIODigestStream : NWIOExtractStream
+
+/**
+ * Forwards to underlying input extract.
+ * @see [NWIODigestExtract method]
+ */
 @property (nonatomic, assign) NWIODigestMethod inputMethod;
+
+/**
+ * Forwards to underlying output extract.
+ * @see [NWIODigestExtract method]
+ */
 @property (nonatomic, assign) NWIODigestMethod outputMethod;
+
+/**
+ * Forwards to underlying input extract.
+ * @see [NWIODigestExtract digest]
+ */
 @property (nonatomic, assign, readonly) NSData *inputDigest;
+
+/**
+ * Forwards to underlying output extract.
+ * @see [NWIODigestExtract digest]
+ */
 @property (nonatomic, assign, readonly) NSData *outputDigest;
+
 @end

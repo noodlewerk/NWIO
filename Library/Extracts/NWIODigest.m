@@ -30,14 +30,6 @@
 
 #pragma mark - Object life cycle
 
-- (id)initWithStream:(NWIOStream *)_stream method:(NWIODigestMethod)_method {
-    self = [super init];
-    if (self) {
-        method = _method;
-    }
-    return self;
-}
-
 - (void)dealloc {
     if (context) {
         free(context); context = NULL;
