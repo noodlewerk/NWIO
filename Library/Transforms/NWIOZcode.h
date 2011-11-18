@@ -20,9 +20,19 @@
 #import "NWIOTransform.h"
 
 
+/**
+ * Takes any binary data and transforms it using a Z-escaped scheme.
+ *
+ * A distinguishing property of zcoding is, that it results in a text that only contains alpha-numeric characters. This makes a zcoded string compatible with about every file or data format around, while maintaining some human-readability. Of course, this has little use in a production environment, where one always prefer to use a context-custom scheme.
+ *
+ * This implementation functions mostly as an example on how to implement a custom per-byte transform in an NWIOTransform.
+ */
 @interface NWIOZcodeTransform : NWIOTransform
 @end
 
 
+/**
+ * A transform stream based on the zcode transform.
+ */
 @interface NWIOZcodeStream : NWIOTransformStream
 @end

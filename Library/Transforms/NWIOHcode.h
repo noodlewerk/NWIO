@@ -20,9 +20,17 @@
 #import "NWIOTransform.h"
 
 
+/**
+ * Takes any binary data and transforms it hex-encoded in ascii.
+ *
+ * This transform is particularly handy for debug purposes. This implementation functions mostly as an example on how to implement a basic per-byte transform in an NWIOTransform.
+ */
 @interface NWIOHcodeTransform : NWIOTransform
 @end
 
 
+/**
+ * A transform stream based on the hcode transform.
+ */
 @interface NWIOHcodeStream : NWIOTransformStream
 @end

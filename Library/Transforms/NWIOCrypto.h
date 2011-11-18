@@ -21,29 +21,74 @@
 
 
 /**
- * An experimental implementation of CBC AES using Common Crypto.
+ * An experimental implementation of CBC AES 128-bit using Common Crypto.
+ *
+ * @warning This implementation functions mostly as an example crypto implementation. It should by no measures be considered safe for use in production environments.
  */
 @interface NWIOCryptoTransform : NWIOTransform
+
+/**
+ * The 16-byte key data used for AES.
+ */
 @property (nonatomic, strong) NSData *key;
+
+/**
+ * The 16-byte iv data used for CBC.
+ */
 @property (nonatomic, strong) NSData *iv;
+
 @end
 
 
 /**
- * A stream based on `NWIOCryptoTransform`.
+ * A filter stream based on the crypto transform.
+ * @see NWIOCryptoTransform
  */
 @interface NWIOCryptoStream : NWIOTransformStream
+
+/**
+ * Forwards to underlying crypto transform.
+ * @see [NWIOCryptoTransform key]
+ */
 @property (nonatomic, strong) NSData *key;
+
+/**
+ * Forwards to underlying crypto transform.
+ * @see [NWIOCryptoTransform iv]
+ */
 @property (nonatomic, strong) NSData *iv;
+
 @end
 
 
 /**
- * An experimental implementation of CBC AES using Common Crypto.
+ * A filter access based on the crypto transform.
+ * @see NWIOCryptoTransform
  */
 @interface NWIOCryptoAccess : NWIOFilterAccess
+
+/**
+ * The length of the plain (deciphered) input text.
+ * NB: needs to be assigend prior to sending read or write messages.
+ */
 @property (nonatomic, assign) NSUInteger inputLength;
+
+/**
+ * The length of the plain (deciphered) output text.
+ * NB: needs to be assigend prior to sending read or write messages.
+ */
 @property (nonatomic, assign) NSUInteger outputLength;
+
+/**
+ * Forwards to underlying crypto transform.
+ * @see [NWIOCryptoTransform key]
+ */
 @property (nonatomic, strong) NSData *key;
+
+/**
+ * Forwards to underlying crypto transform.
+ * @see [NWIOCryptoTransform iv]
+ */
 @property (nonatomic, strong) NSData *iv;
+
 @end

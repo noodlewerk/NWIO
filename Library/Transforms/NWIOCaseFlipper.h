@@ -20,9 +20,19 @@
 #import "NWIOTransform.h"
 
 
+/**
+ * Flips the case of all passing ascii text.
+ *
+ * This implementation functions mostly as an example on how to implement a very basic per-byte transform in an NWIOTransform.
+ *
+ * @warning NB: this transform does not respect (and probably breaks) multi-byte character encodings like UTF-8.
+ */
 @interface NWIOCaseFlipperTransform : NWIOTransform
 @end
 
 
+/**
+ * A transform stream based on the case-flipper transform.
+ */
 @interface NWIOCaseFlipperStream : NWIOTransformStream
 @end

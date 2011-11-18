@@ -20,10 +20,23 @@
 #import "NWIOTransform.h"
 
 
+/**
+ * Applies zlib's deflate algorithm.
+ *
+ * This transform uses the default deflate and inflate configuration, without allowing further configuration. The implementation functions mostly as an example on how to use zlib in an NWIOTransform.
+ */
 @interface NWIODeflateTransform : NWIOTransform
+
+/**
+ * The length of the substitute buffer that is allocated (and reused) when a transparent buffer is passed as toBuffer.
+ */
 @property (nonatomic, assign) NSUInteger transparentBufferLength;
+
 @end
 
 
+/**
+ * A transform stream based on the deflate transform.
+ */
 @interface NWIODeflateStream : NWIOTransformStream
 @end
