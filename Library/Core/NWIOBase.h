@@ -31,17 +31,19 @@ extern NSUInteger const NWIODefaultBufferLength;
  *
  * Base does not provide any concrete functionality. Instead, it functions as a collection of control functions that are common to most operations, for both streaming and accessing.
  *
- * @warning: This is an abstract class, do not instantiate it directly.
+ * @warning NB: This is an abstract class. Do not instantiate it directly, but subclass and override abstract methods.
  */
 @interface NWIOBase : NSObject
 
 /**
- * Returns the error, if any, that occured during the last read operation
+ * Retrieves the error, if any, that occurred during the last read operation.
+ * @return An NSError if one occurred.
  */
 - (NSError *)readError;
 
 /**
- * Returns the error, if any, that occured during the last write operation
+ * Retrieves the error, if any, that occurred during the last write operation.
+ * @return An NSError if one occurred.
  */
 - (NSError *)writeError;
 
@@ -56,21 +58,16 @@ extern NSUInteger const NWIODefaultBufferLength;
 - (void)closeWrite;
 
 /**
- * Decouples the chain of operations, allowing individual links to be garbage collected. Consequentially, sever should be the last call on a chain. NB: When subclassing, remember to call sever on members before severing from them.
+ * Decouples the chain of operations, allowing individual links to be garbage collected. Consequentially, sever should be the last call on a chain.
+ * @warning NB: When subclassing, remember to call sever on members before severing from them.
  */
 - (void)sever;
 
 /**
  * An open-ended system for sending control instructions along the operation chain. This system remains unused by NWIO itself.
  * @param control An object representing the control operation, e.g. a string constant.
+ * @return An object representing the control outcome, e.g. a string contant.
  */
 - (id)control:(id)control;
 
 @end
-
-
-
-
-
-
-

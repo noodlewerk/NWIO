@@ -20,14 +20,47 @@
 #import "NWIOFilter.h"
 
 
+/**
+ * An extract processes data chunks to derive information from it, e.g. to compute a checksum.
+ *
+ * Subclasses should implement extractFrom:length:. A NULL buffer should be handled well.
+ *
+ * @warning NB: This is an abstract class. Do not instantiate it directly, but subclass and override abstract methods.
+ */
 @interface NWIOExtract : NSObject
-// Subclass and override:
+
+/**
+ * Performs extraction. Abstract.
+ * @param buffer -
+ * @param length -
+ */
 - (void)extractFrom:(const unsigned char *)buffer length:(NSUInteger)length;
+
 @end
 
 
+/**
+ * An extract stream is a identity stream that extracts or processes data from the stream, using an NWIOExtract.
+ */
 @interface NWIOExtractStream : NWIOFilterStream
+
+/**
+ * The extract used for processing input data.
+ */
 @property (nonatomic, strong) NWIOExtract *inputExtract;
+
+/**
+ * The extract used for processing output data.
+ */
 @property (nonatomic, strong) NWIOExtract *outputExtract;
+
+/**
+ * A convenience initializer that sets properties and forwards to super.
+ * @param stream The stream to chain to.
+ * @param inputExtract Assigned to property.
+ * @param outputExtract Assigned to property.
+ * @return instance
+ */
 - (id)initWithStream:(NWIOStream *)stream inputExtract:(NWIOExtract *)inputExtract outputExtract:(NWIOExtract *)outputExtract;
+
 @end

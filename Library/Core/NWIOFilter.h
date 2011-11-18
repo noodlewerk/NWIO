@@ -20,24 +20,50 @@
 #import "NWIOStream.h"
 #import "NWIOAccess.h"
 
+
 /**
- * A stream that functions as a link in chain of filters, each observing or manipulating the data that passing through.
+ * A stream that functions as a link in chain of filters. All read and write operations are forwarded to the linked stream and all data is filtered as it passes.
  *
- * @warning: This is an abstract class, do not instantiate it directly.
+ * @warning NB: This is an abstract class. Do not instantiate it directly, but subclass and override abstract methods.
  */
 @interface NWIOFilterStream : NWIOStream {
 @protected
     NWIOStream *stream;
 }
+
+/**
+ * The stream to which the responder is linked.
+ */
 @property (nonatomic, strong) NWIOStream *stream;
+
+/**
+ * Initializes and assigns parameters.
+ * @param stream Will be assigned to property.
+ */
 - (id)initWithStream:(NWIOStream *)stream;
+
 @end
 
 
+/**
+ * An access that functions as a link in chain of accesses. All read and write operations are forwarded to the linked access and all data is filtered as it passes.
+ *
+ * @warning NB: This is an abstract class. Do not instantiate it directly, but subclass and override abstract methods.
+ */
 @interface NWIOFilterAccess : NWIOAccess {
 @protected
     NWIOAccess *access;
 }
+
+/**
+ * The access to which the responder is linked.
+ */
 @property (nonatomic, strong) NWIOAccess *access;
+
+/**
+ * Initializes and assigns parameters.
+ * @param access Will be assigned to property.
+ */
 - (id)initWithAccess:(NWIOAccess *)access;
+
 @end
