@@ -32,7 +32,7 @@
     NSUInteger r2 = [dropper read:read length:sizeof(read)];
     NSAssert(r2 == 1, @"Should be 1: %i", r1);
     NSAssert(read[0] == 'I', @"Should be 'I': %c", read[0]);
-    
+
     const unsigned char *readable = nil;
     NSUInteger r3 = [dropper readable:(const void **)&readable];
     NSAssert(r3 == 1, @"Should be 1: %i", r3);

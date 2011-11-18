@@ -20,16 +20,46 @@
 #import "NWIODeflateTest.h"
 #import "NWIOTransformTesting.h"
 #import "NWIO.h"
-
+#import "NWIOTestTools.h"
 
 @implementation NWIODeflateTest
 
 - (void)test {
-    NWIODeflateTransform *transform = [[NWIODeflateTransform alloc] init];
-    NSData *plain = [@"For the specific language governing permissions" dataUsingEncoding:NSUTF8StringEncoding];
-    NWIOHcodeStream *hcodeStream = [[NWIOHcodeStream alloc] initWithInputString:@"789C05C1 810DC020 0C03B057 72CDFE40 2894485B 8B5AD8FD D84F24F6 246AB16B A8E36D6E A71961F1 335D6E58 CC4F550A AF0BA496 121E" outputString:nil];
-    NSData *coded = [hcodeStream drainFromInputToDataBuffered:NO];
-    [NWIOTransformTesting testTransform:transform plain:plain coded:coded];
+    NSString *plainText = @"For the specific language governing permissions";
+    NSData *deflated = DATA(@"789C05C1810DC0200C03B05772CDFE402894485B8B5AD8FDD84F24F6246AB16BA8E36D6EA71961F1335D6E58CC4F550AAF0BA496121E");
+
+    {
+        NWIODeflateStream *stream = [[NWIODeflateStream alloc] initWithInputData:deflated outputData:nil];
+
+        [stream rewindRead];
+        NSString *buffered = [stream drainFromInputToStringBuffered:YES];
+        NSAssert([buffered isEqualToString:plainText], @"");
+
+        [stream rewindRead];
+        NSString *unbufferd = [stream drainFromInputToStringBuffered:NO];
+        NSAssert([unbufferd isEqualToString:plainText], @"");
+
+        [stream rewindRead];
+        NSString *dropped = [[[NWIODropperStream alloc] initWithStream:stream] drainFromInputToStringBuffered:NO];
+        NSAssert([dropped isEqualToString:plainText], @"");
+    }
+
+    {
+        NWIODeflateStream *stream = [[NWIODeflateStream alloc] initWithInputString:plainText outputString:nil];
+        [stream invert];
+
+        [stream rewindRead];
+        NSData *buffered = [stream drainFromInputToDataBuffered:YES];
+        NSAssert([buffered isEqualToData:deflated], @"");
+
+        [stream rewindRead];
+        NSData *unbufferd = [stream drainFromInputToDataBuffered:NO];
+        NSAssert([unbufferd isEqualToData:deflated], @"");
+
+        [stream rewindRead];
+        NSData *dropped = [[[NWIODropperStream alloc] initWithStream:stream] drainFromInputToDataBuffered:NO];
+        NSAssert([dropped isEqualToData:deflated], @"");
+    }
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  NWIODigestTest.m
+//  NWIOTestTools.h
 //  NWIO
 //
 //  Copyright 2011 Noodlewerk
@@ -17,18 +17,12 @@
 //  limitations under the License.
 //
 
-#import "NWIODigestTest.h"
-#import "NWIO.h"
-#import "NWIOTestTools.h"
+#import <Foundation/Foundation.h>
 
-@implementation NWIODigestTest
+#define DATA(__a) [NWIOTestTools dataFromHexString:(__a)]
 
-- (void)test {
-    NSData *data = [@"for the specific language governing permissions" dataUsingEncoding:NSUTF8StringEncoding];
-    NWIODigestExtract *extract = [[NWIODigestExtract alloc] init];
-    [extract extractFrom:data.bytes length:data.length];
-    NSData *checkData = DATA(@"cc34c804e5cabb30bd73689049c2834557a70638");
-    NSAssert([extract.digest isEqualToData:checkData], @"Should be equal: %@==%@", extract.digest, checkData);
-}
+@interface NWIOTestTools : NSObject
+
++ (NSData *)dataFromHexString:(NSString *)hexString;
 
 @end

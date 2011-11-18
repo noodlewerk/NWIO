@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D71A4F2E1476E231004B3AB3 /* NWIOTestTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D71A4F2D1476E231004B3AB3 /* NWIOTestTools.m */; };
+		D71A4F301476E4D6004B3AB3 /* NWIODeflateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D7343A0614746C390092A23A /* NWIODeflateTest.m */; };
+		D71A4F311476ECE3004B3AB3 /* NWIOConstantTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D73439FF14746C390092A23A /* NWIOConstantTest.m */; };
 		D73439B114746C2F0092A23A /* NWIOCaseFlipperDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D734394414746C2F0092A23A /* NWIOCaseFlipperDemo.m */; };
 		D73439B214746C2F0092A23A /* NWIOConsoleDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D734394614746C2F0092A23A /* NWIOConsoleDemo.m */; };
 		D73439B314746C2F0092A23A /* NWIOCounterDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D734394814746C2F0092A23A /* NWIOCounterDemo.m */; };
@@ -93,6 +96,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D71A4F2C1476E231004B3AB3 /* NWIOTestTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOTestTools.h; sourceTree = "<group>"; };
+		D71A4F2D1476E231004B3AB3 /* NWIOTestTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOTestTools.m; sourceTree = "<group>"; };
 		D734394314746C2F0092A23A /* NWIOCaseFlipperDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOCaseFlipperDemo.h; sourceTree = "<group>"; };
 		D734394414746C2F0092A23A /* NWIOCaseFlipperDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOCaseFlipperDemo.m; sourceTree = "<group>"; };
 		D734394514746C2F0092A23A /* NWIOConsoleDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOConsoleDemo.h; sourceTree = "<group>"; };
@@ -261,6 +266,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D71A4F2B1476E231004B3AB3 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D71A4F2C1476E231004B3AB3 /* NWIOTestTools.h */,
+				D71A4F2D1476E231004B3AB3 /* NWIOTestTools.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		D734394114746C2F0092A23A /* Demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +502,7 @@
 				D73439F314746C390092A23A /* Extractors */,
 				D73439F814746C390092A23A /* Filters */,
 				D73439FB14746C390092A23A /* Sources */,
+				D71A4F2B1476E231004B3AB3 /* Tools */,
 				D7343A0214746C390092A23A /* Transforms */,
 			);
 			path = Unit;
@@ -731,6 +746,7 @@
 				D73439E214746C2F0092A23A /* NWIODeflate.m in Sources */,
 				D73439E314746C2F0092A23A /* NWIOHcode.m in Sources */,
 				D73439E414746C2F0092A23A /* NWIOZcode.m in Sources */,
+				D71A4F2E1476E231004B3AB3 /* NWIOTestTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,6 +766,8 @@
 				D7343A1C14746C390092A23A /* NWIOHcodeTest.m in Sources */,
 				D7343A1D14746C390092A23A /* NWIOTransformTesting.m in Sources */,
 				D7343A1E14746C390092A23A /* NWIOZcodeTest.m in Sources */,
+				D71A4F301476E4D6004B3AB3 /* NWIODeflateTest.m in Sources */,
+				D71A4F311476ECE3004B3AB3 /* NWIOConstantTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -76,19 +76,11 @@
     NWIODrain *writeDrain = [[NWIODrain alloc] initWithSource:inputStream] ;
     NWIODrain *readDrain = [[NWIODrain alloc] initWithSink:outputStream] ;
 
-    // NWIOFilterStream *a = [[NWIOHcodeStream alloc] init] ;
-    // a.stream = bufferStream;
-    // NWIOFilterStream *b = [[NWIOZcodeStream alloc] init] ;
     NWIOFilterStream *filter = [[NWIOIdentityStream alloc] init] ;
     filter.stream = bufferStream;
     writeDrain.sink = filter;
     readDrain.source = filter;
 
-//    NSMutableData *inputData = [NSMutableData dataWithLength:7];
-//    unsigned char *buffer = [inputData mutableBytes];
-//    for (NSUInteger i = 0; i < inputData.length; i++) {
-//        buffer[i] = i;
-//    }
     NSData *inputData = [@"test" dataUsingEncoding:NSUTF8StringEncoding];
 
     [inputStream setInput:inputData];
