@@ -23,13 +23,11 @@
 
 @implementation NWIOAppDelegate
 
-@synthesize window = _window;
-@synthesize navigationController = _navigationController;
-@synthesize splitViewController = _splitViewController;
+@synthesize window, navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    NWIOMenuViewController *menuViewController = [[NWIOMenuViewController alloc] initWithNibName:@"NWIOMenuViewController" bundle:nil];
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    NWIOMenuViewController *menuViewController = [[NWIOMenuViewController alloc] init];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:menuViewController];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];

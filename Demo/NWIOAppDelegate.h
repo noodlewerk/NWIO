@@ -23,5 +23,4 @@
 @interface NWIOAppDelegate : UIResponder <UIApplicationDelegate>
 @property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, strong) UINavigationController *navigationController;
-@property (nonatomic, strong) UISplitViewController *splitViewController;
 @end
