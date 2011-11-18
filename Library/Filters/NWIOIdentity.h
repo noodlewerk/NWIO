@@ -19,13 +19,22 @@
 
 #import "NWIOFilter.h"
 
+
 /**
- * A filter that does absolutely nothing. Mostly used for subclassing.
+ * An stream filter that does no manipulation of passing data, simply letting it through.
  *
- * If no stream is assigned to this filter, it will function alike a zero constant stream.
+ * - Mostly used for subclassing.
+ * - If no stream is assigned to this filter, it will function alike a zero constant stream.
  */
 @interface NWIOIdentityStream : NWIOFilterStream
 @end
 
+
+/**
+ * An access filter that does no manipulation of passing data, simply letting it through.
+ *
+ * - Mostly used for subclassing.
+ * - If this filter has no filter chained to it, it will act as if it was chained to a zero constant source.
+ */
 @interface NWIOIdentityAccess : NWIOFilterAccess
 @end

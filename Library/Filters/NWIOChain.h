@@ -21,11 +21,14 @@
 
 
 /**
+ * Combines a chain of filters into a single filter.
+ *
  * :c - self (chain)
  * :s - self.stream
  * :f - self.first
  *
  * - chain initWithStream:A
+ *
  *          +---+
  *          |:c |   +-----+
  *          |   |==>| A:s |
@@ -33,6 +36,7 @@
  *          +---+
  *
  * - chain addFilter:B
+ *
  *          +-----------+
  *          |:c +------+|  +---+
  *          |==>| B:sf |==>| A |
@@ -40,6 +44,7 @@
  *          +-----------+
  *
  * - chain addFilter:C
+ *
  *          +--------------------+
  *          |:c +-----+   +-----+|  +---+
  *          |==>| C:s |==>| B:f |==>| A |
@@ -47,13 +52,21 @@
  *          +--------------------+
  *
  * - D initWithStream:chain
+ *
  *          +--------------------+
  *  +---+   |:c +-----+   +-----+|  +---+
  *  | D |==>|==>| C:s |==>| B:f |==>| A |
  *  +---+   |   +-----+   +-----+|  +---+
  *          +--------------------+
+ *
+ * @see NWIOFilterStream
  */
 @interface NWIOChain : NWIOIdentityStream
-// adds a new filter to the chain. The chain will read from this filter, which in turn will read from this chain's stream.
+
+/**
+ * Adds a new filter to the chain. The chain will read from this filter, which in turn will read from this chain's stream.
+ * @param filter -
+ */
 - (void)addFilter:(NWIOFilterStream *)filter;
+
 @end

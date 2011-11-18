@@ -19,6 +19,7 @@
 
 #import "NWIOIdentity.h"
 
+
 /**
  * Wraps a stream of file data as part of an HTTP request with content type 'multipart/form-data'.
  */
@@ -41,7 +42,7 @@
 /**
  * The boundary text that is used to separate fields. Should not occur anywhere else in the HTTP body. If left blank, a boundary will be generated upon calling [compose].
  *
- * NB: the value of boundary should be mentioned in the HTTP header: `Content-Type: multipart/form-data; boundary=<bounary>`
+ * NB: the value of boundary should be mentioned in the HTTP header: `Content-Type: multipart/form-data; boundary=<boundary>`
  */
 @property (nonatomic, strong) NSString *boundary;
 
@@ -51,7 +52,7 @@
 @property (nonatomic, strong) NSDictionary *parameters;
 
 /**
- * The length of the stream without the content, i.e. the size of the form head and foot. This property is set in [compose]. Should be used to compute the content length, as set in the HTTP header: `Content-Length: <formDataLengt + contentLength>`
+ * The length of the stream without the content, i.e. the size of the form head and foot. This property is set in [compose]. Should be used to compute the content length, as set in the HTTP header: `Content-Length: <formDataLength + contentLength>`
  */
 @property (nonatomic, assign, readonly) NSUInteger formDataLength;
 

@@ -19,8 +19,9 @@
 
 #import "NWIOIdentity.h"
 
+
 /**
- * Listens to NSURLConnection and streams incomming data.
+ * Listens to NSURLConnection and streams incoming data.
  *
  * If the response's status code is 200, all data will be streamed though self (identity filter). If the connection is not cancelled, either didFinishBlock or didFailBlock will be invoked.
  */

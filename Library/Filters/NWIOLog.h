@@ -23,19 +23,40 @@
 /**
  * Logs all operations that pass thought this filter.
  *
+ * By default logs with NSLog(..).
  * NB: Calls to logBlock take place during the IO operation.
  */
 @interface NWIOLogStream : NWIOIdentityStream
+
+/**
+ * A small test that will be prefixed to every log entry.
+ */
 @property (nonatomic, strong) NSString *tag;
+
+/**
+ * Will be invoked for every log entry.
+ */
 @property (nonatomic, strong) void(^logBlock)(NSString *);
+
 @end
+
 
 /**
  * Logs all operations that pass thought this filter.
  *
+ * By default logs with NSLog(..).
  * NB: Calls to logBlock take place during the IO operation.
  */
 @interface NWIOLogAccess : NWIOIdentityAccess
+
+/**
+ * A small test that will be prefixed to every log entry.
+ */
 @property (nonatomic, strong) NSString *tag;
+
+/**
+ * Will be invoked for every log entry.
+ */
 @property (nonatomic, strong) void(^logBlock)(NSString *);
+
 @end

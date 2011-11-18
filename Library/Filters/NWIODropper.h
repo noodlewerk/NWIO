@@ -20,7 +20,23 @@
 #import "NWIOFilter.h"
 
 
+/**
+ * Limits operation buffer length by letting only a limited number of bytes though.
+ *
+ * The dropper is mostly used for testing a streams performance for a certain buffer length.
+ */
 @interface NWIODropperStream : NWIOFilterStream
+
+/**
+ * The maximum length of a buffers that are returned with all read and write operations.
+ */
 @property (nonatomic, assign) NSUInteger dropSize;
+
+/**
+ * Assigns properties and forwards to super.
+ * @param stream -
+ * @param dropSize -
+ */
 - (id)initWithStream:(NWIOStream *)stream dropSize:(NSUInteger)dropSize;
+
 @end

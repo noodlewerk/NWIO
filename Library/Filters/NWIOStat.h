@@ -21,30 +21,69 @@
 
 
 /**
- * A container for statistics on a single variable.
+ * A container for statistics on a single series of values.
  */
 @interface NWIOStatInteger : NSObject
+
+/**
+ * The sum of all values.
+ */
 @property (nonatomic, assign, readonly) long int count;
+
+/**
+ * The average of values (count / N).
+ */
 @property (nonatomic, assign, readonly) NSUInteger average;
+
+/**
+ * The variance of values (sum-square-diffs / N).
+ */
 @property (nonatomic, assign, readonly) long long int variance;
+
+/**
+ * The deviation of values (sqrt(variance)).
+ */
 @property (nonatomic, assign, readonly) NSUInteger deviation;
+
+/**
+ * Registers next value.
+ */
 - (void)count:(NSUInteger)value;
+
+/**
+ * Undoes registration of value, approximately.
+ */
 - (void)uncount:(NSUInteger)value;
+
 @end
 
 
 /**
- * Records statistics of data passing though this filter, without modifiying it.
+ * Records statistics of data passing though this filter.
  */
 @interface NWIOStatStream : NWIOIdentityStream
+
+/**
+ * Statistics on the length of the read and write buffers.
+ */
 @property (nonatomic, strong, readonly) NWIOStatInteger *lengthStat;
+
 @end
 
 
 /**
- * Records statistics of data passing though this filter, without modifiying it.
+ * Records statistics of data passing though this filter.
  */
 @interface NWIOStatAccess : NWIOIdentityAccess
+
+/**
+ * Statistics on the offset of the read and write buffers.
+ */
 @property (nonatomic, strong, readonly) NWIOStatInteger *locationStat;
+
+/**
+ * Statistics on the length of the read and write buffers.
+ */
 @property (nonatomic, strong, readonly) NWIOStatInteger *lengthStat;
+
 @end
