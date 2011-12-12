@@ -27,40 +27,82 @@
     unsigned char forChar;
 }
 
+static unsigned char toHex[65] = "0123456789ABCDEFG";
+
+#define XX 16
+
+static unsigned char toDec[256] = {
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX,
+    0,  1,  2,  3,  4,  5,  6,  7,  8,  9, XX, XX, XX, XX, XX, XX, 
+    XX, 10, 11, 12, 13, 14, 15, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, 10, 11, 12, 13, 14, 15, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+};
+
+static unsigned char isAlpha[256] = {
+     NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO, 
+     NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO, 
+     NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO, 
+    YES, YES, YES, YES, YES, YES, YES, YES, YES, YES,  NO,  NO,  NO,  NO,  NO,  NO,
+     NO, YES, YES, YES, YES, YES, YES, YES, YES, YES, YES, YES, YES, YES, YES, YES,
+    YES, YES, YES, YES, YES, YES, YES, YES, YES, YES,  NO,  NO,  NO,  NO,  NO,  NO, 
+     NO, YES, YES, YES, YES, YES, YES, YES, YES, YES, YES, YES, YES, YES, YES, YES,
+    YES, YES, YES, YES, YES, YES, YES, YES, YES, YES, YES,  NO,  NO,  NO,  NO,  NO, 
+     NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO, 
+     NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO, 
+     NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO, 
+     NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO, 
+     NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO, 
+     NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO, 
+     NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO, 
+     NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO, 
+};
+
 
 #pragma mark - NWIOTransform subclass
 
-#define IS_HEX(_a) (((_a)>='0'&&(_a)<='9')||((_a)>='A'&&(_a)<='F')||((_a)>='a'&&(_a)<='f'))
-#define TO_NUM(_a) ((_a)<='9'?(_a)-'0':((_a)<='Z'?(_a)-('A'-10):((_a)<='z'?(_a)-('a'-10):0)))
 // fully processes at least one of the buffers
 - (BOOL)transformBackwardFromBuffer:(const unsigned char *)fromBuffer fromLength:(NSUInteger)fromLength fromInc:(NSUInteger *)fromInc toBuffer:(unsigned char *)toBuffer toLength:(NSUInteger)toLength toInc:(NSUInteger *)toInc error:(NSError **)error {
     const unsigned char *fromEnd = fromBuffer + fromLength;
     unsigned char *toEnd = toBuffer + toLength;
     for (unsigned char c = *fromBuffer; toBuffer < toEnd && fromBuffer < fromEnd; c = *(++fromBuffer)) {
         switch (backState) {
-            case 0:
+            case 0: {
                 if (c == 'Z') {
                     // came across the escape character, so go in byte modus
                     backState++;
                 } else {
                     *(toBuffer++) = c;
                 }
-                break;
-            case 1:
-                if (IS_HEX(c)) {
+            } break;
+            case 1: {
+                unsigned char d = toDec[c];
+                if (d < XX) {
                     // this is the first of two, so let's keep it
-                    backChar = TO_NUM(c) * 16;
+                    backChar = d * 16;
                     backState++;
                 } else {
                     // ignore byte mode
                     *(toBuffer++) = c;
                     backState = 0;
                 }
-                break;
-            case 2:
-                if (IS_HEX(c)) {
+            } break;
+            case 2: {
+                unsigned char d = toDec[c];
+                if (d < XX) {
                     // we already had one part, let's add the other
-                    *(toBuffer++) = backChar + TO_NUM(c);
+                    *(toBuffer++) = backChar + d;
                 } else {
                     // apparently single hex encoded
                     *(toBuffer++) = backChar;
@@ -68,7 +110,7 @@
                     fromBuffer--;
                 }
                 backState = 0;
-                break;
+            } break;
         }
     }
     *fromInc = fromLength - (fromEnd - fromBuffer);
@@ -76,8 +118,6 @@
     return YES;
 }
 
-#define IS_ALP(_a) (((_a)>='0'&&(_a)<='9')||((_a)>='a'&&(_a)<='z')||((_a)>='A'&&(_a)<='Y'))
-#define TO_HEX(_a) ((_a)<=9?(_a)+'0':(_a)+('A'-10))
 - (BOOL)transformForwardFromBuffer:(const unsigned char *)fromBuffer fromLength:(NSUInteger)fromLength fromInc:(NSUInteger *)fromInc toBuffer:(unsigned char *)toBuffer toLength:(NSUInteger)toLength toInc:(NSUInteger *)toInc error:(NSError **)error {
     const unsigned char *fromEnd = fromBuffer + fromLength;
     unsigned char *toEnd = toBuffer + toLength;
@@ -85,7 +125,7 @@
         switch (forState) {
             case 0:
                 forChar = *(fromBuffer++);
-                if (IS_ALP(forChar)) {
+                if (isAlpha[forChar]) {
                     // it's a direct character, so just write it
                     *toBuffer = forChar;
                     forState = 0;
@@ -95,11 +135,11 @@
                 }
                 break;
             case 1:
-                *toBuffer = TO_HEX(forChar >> 4);
+                *toBuffer = toHex[(forChar >> 4) & 0xF];
                 forState++;
                 break;
             case 2:
-                *toBuffer = TO_HEX(forChar & 0xF);
+                *toBuffer = toHex[forChar & 0xF];
                 forState = 0;
                 break;
         }
@@ -121,13 +161,13 @@
 
 - (BOOL)flushForwardToBuffer:(unsigned char *)toBuffer toLength:(NSUInteger)toLength toInc:(NSUInteger *)toInc error:(NSError **)error {
     if (forState == 1 && toLength) {
-        *(toBuffer++) = TO_HEX(forChar >> 4);
+        *(toBuffer++) = toHex[(forChar >> 4) & 0xF];
         (*toInc)++;
         forState++;
         toLength--;
     }
     if (forState == 2 && toLength) {
-        *toBuffer = TO_HEX(forChar & 0xF);
+        *toBuffer = toHex[forChar & 0xF];
         (*toInc)++;
         forState = 0;
     }

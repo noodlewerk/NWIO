@@ -30,23 +30,46 @@ static NSUInteger const NWIOBlockSize = 8;
     unsigned char forChar;
 }
 
+static unsigned char toHex[65] = "0123456789ABCDEFG";
+
+#define XX 16
+
+static unsigned char toDec[256] = {
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX,
+     0,  1,  2,  3,  4,  5,  6,  7,  8,  9, XX, XX, XX, XX, XX, XX, 
+    XX, 10, 11, 12, 13, 14, 15, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, 10, 11, 12, 13, 14, 15, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+    XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, XX, 
+};
+
 
 #pragma mark - NWIOTransform subclass
 
-#define TO_NUM(_a) ((_a)<='9'?(_a)-'0':((_a)<='Z'?(_a)-('A'-10):((_a)<='z'?(_a)-('a'-10):0)))
 // turns hex into bytes, '7768656E' -> 'when'
 - (BOOL)transformBackwardFromBuffer:(const unsigned char *)fromBuffer fromLength:(NSUInteger)fromLength fromInc:(NSUInteger *)fromInc toBuffer:(unsigned char *)toBuffer toLength:(NSUInteger)toLength toInc:(NSUInteger *)toInc error:(NSError **)error {
     const unsigned char *fromEnd = fromBuffer + fromLength;
     unsigned char *toEnd = toBuffer + toLength;
     for (unsigned char c = *fromBuffer; toBuffer < toEnd && fromBuffer < fromEnd; c = *(++fromBuffer)) {
-        if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F')) {
+        unsigned char d = toDec[c];
+        if (d < XX) {
             if (backState) {
                 // we already had one part, let's add the other
-                *(toBuffer++) = backChar + TO_NUM(c);
+                *(toBuffer++) = backChar + d;
                 backState = 0;
             } else {
                 // this is the first of two, so let's keep it
-                backChar = TO_NUM(c) * 16;
+                backChar = d * 16;
                 backState++;
             }
         }
@@ -56,7 +79,6 @@ static NSUInteger const NWIOBlockSize = 8;
     return YES;
 }
 
-#define TO_HEX(_a) ((_a)<=9?(_a)+'0':(_a)+('A'-10))
 // turns bytes into hex, 'when' -> '7768656E'
 - (BOOL)transformForwardFromBuffer:(const unsigned char *)fromBuffer fromLength:(NSUInteger)fromLength fromInc:(NSUInteger *)fromInc toBuffer:(unsigned char *)toBuffer toLength:(NSUInteger)toLength toInc:(NSUInteger *)toInc error:(NSError **)error {
     const unsigned char *fromEnd = fromBuffer + fromLength;
@@ -68,13 +90,13 @@ static NSUInteger const NWIOBlockSize = 8;
             forState = 0;
         } else if(forState % 2) {
             // write lower half
-            *toBuffer = TO_HEX(forChar & 0xF);
+            *toBuffer = toHex[forChar & 0xF];
             forState++;
         } else {
             // read new chacter to encode
             forChar = *(fromBuffer++);
             // write upper half
-            *toBuffer = TO_HEX(forChar >> 4);
+            *toBuffer = toHex[(forChar >> 4) & 0xF];
             forState++;
         }
     }
@@ -97,7 +119,7 @@ static NSUInteger const NWIOBlockSize = 8;
 - (BOOL)flushForwardToBuffer:(unsigned char *)toBuffer toLength:(NSUInteger)toLength toInc:(NSUInteger *)toInc error:(NSError **)error {
     // forState even: no information nor need
     if(forState % 2 && toLength) {
-        *toBuffer = TO_HEX(forChar & 0xF);
+        *toBuffer = toHex[forChar & 0xF];
         (*toInc)++;
         forState = 0;
     }
