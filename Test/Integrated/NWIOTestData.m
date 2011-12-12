@@ -55,7 +55,7 @@
     [filters addObject:[[NWIODeflateStream alloc] init]];
     [filters addObject:[[NWIOCryptoStream alloc] init]];
     [result addObjectsFromArray:filters];
-    [result addObject:[[NWIOChain alloc] init]];
+    [result addObject:[[NWIOChainStream alloc] init]];
     for (NWIOFilterStream *filter in filters) {
         [[result lastObject] addFilter:filter];
     }

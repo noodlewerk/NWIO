@@ -48,7 +48,7 @@
     NSArray *transforms = [NWIOTestData transforms];
 
     for (NWIOTransform *transform in transforms) {
-        NWIOChain *forback = [[NWIOChain alloc] init];
+        NWIOChainStream *forback = [[NWIOChainStream alloc] init];
         [forback addFilter:[[NWIOTransformStream alloc] initWithStream:nil transform:transform inverted:YES]];
         [forback addFilter:[[NWIOTransformStream alloc] initWithStream:nil transform:transform]];
         [self checkIdentity:forback];
