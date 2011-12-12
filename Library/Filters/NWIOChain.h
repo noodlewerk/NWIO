@@ -21,7 +21,7 @@
 
 
 /**
- * Combines a chain of filters into a single filter.
+ * Combines a chain of filter streams into a single filter.
  *
  * :c - self (chain)
  * :s - self.stream
@@ -61,12 +61,26 @@
  *
  * @see NWIOFilterStream
  */
-@interface NWIOChain : NWIOIdentityStream
+@interface NWIOChainStream : NWIOIdentityStream
 
 /**
  * Adds a new filter to the chain. The chain will read from this filter, which in turn will read from this chain's stream.
  * @param filter -
  */
 - (void)addFilter:(NWIOFilterStream *)filter;
+
+@end
+
+
+/**
+ * Combines a chain of filter accesses into a single filter.
+ */
+@interface NWIOChainAccess : NWIOIdentityAccess
+
+/**
+ * Adds a new filter to the chain. The chain will read from this filter, which in turn will read from this chain's access.
+ * @param filter -
+ */
+- (void)addFilter:(NWIOFilterAccess *)filter;
 
 @end
