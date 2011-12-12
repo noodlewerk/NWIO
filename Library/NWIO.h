@@ -46,6 +46,7 @@
 #import "NWIODigest.h"
 
 // Transforms
+#import "NWIOBase64.h"
 #import "NWIOCaseFlipper.h"
 #import "NWIOCrypto.h"
 #import "NWIODeflate.h"

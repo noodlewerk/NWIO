@@ -57,8 +57,8 @@
             [readDrain rewind];
             [readDrain run];
             if (![inputData isEqualToData:outputData]) {
-                NSLog(@"should be equal: %@==%@  %@", inputData, outputData, filter);
-                NSLog(@"%.*s",bufferData.length, bufferData.bytes);
+//                NSLog(@"should be equal: %@==%@  %@", inputData, outputData, filter);
+//                NSLog(@"%.*s",bufferData.length, bufferData.bytes);
                 NSAssert(NO, @"should be equal: %@==%@", inputData, outputData);
             }
         }
@@ -96,8 +96,8 @@
     [readDrain run];
 
     if (![inputData isEqualToData:outputData]) {
-        NSLog(@"should be equal: %@==%@  %@", inputData, outputData, filter);
-        NSLog(@"%.*s",bufferData.length, bufferData.bytes);
+//        NSLog(@"should be equal: %@==%@  %@", inputData, outputData, filter);
+//        NSLog(@"%.*s",bufferData.length, bufferData.bytes);
         NSAssert(NO, @"should be equal: %@==%@", inputData, outputData);
     }
 }

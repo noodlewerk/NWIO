@@ -36,7 +36,7 @@
         NSData *outputData = [filter drainFromInputToDataBuffered:YES];
 
         if (![inputData isEqualToData:outputData]) {
-            NSLog(@"should be equal: %@==%@  %@", inputData, outputData, filter);
+//            NSLog(@"should be equal: %@==%@  %@", inputData, outputData, filter);
             NSAssert(NO, @"should be equal: %@==%@", inputData, outputData);
         }
     }

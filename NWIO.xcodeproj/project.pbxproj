@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7068087149660A2005A6791 /* NWIOBase64Demo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7068086149660A2005A6791 /* NWIOBase64Demo.m */; };
+		D706808C149663A6005A6791 /* NWIOBase64Test.m in Sources */ = {isa = PBXBuildFile; fileRef = D706808A1496637A005A6791 /* NWIOBase64Test.m */; };
 		D71A4F2E1476E231004B3AB3 /* NWIOTestTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D71A4F2D1476E231004B3AB3 /* NWIOTestTools.m */; };
 		D71A4F301476E4D6004B3AB3 /* NWIODeflateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D7343A0614746C390092A23A /* NWIODeflateTest.m */; };
 		D71A4F311476ECE3004B3AB3 /* NWIOConstantTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D73439FF14746C390092A23A /* NWIOConstantTest.m */; };
@@ -83,6 +85,7 @@
 		D75A3BF11472B95B00DA0DF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75A3BCF1472B95B00DA0DF9 /* Foundation.framework */; };
 		D799A3C01472BAE00036DB1F /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D799A3BF1472BAE00036DB1F /* libz.dylib */; };
 		D799A3C11472BBD60036DB1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75A3BD11472B95B00DA0DF9 /* CoreGraphics.framework */; };
+		D7FD4224148BDE4C00838259 /* NWIOBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FD4223148BDE4C00838259 /* NWIOBase64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D7068085149660A2005A6791 /* NWIOBase64Demo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOBase64Demo.h; sourceTree = "<group>"; };
+		D7068086149660A2005A6791 /* NWIOBase64Demo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOBase64Demo.m; sourceTree = "<group>"; };
+		D70680891496637A005A6791 /* NWIOBase64Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOBase64Test.h; sourceTree = "<group>"; };
+		D706808A1496637A005A6791 /* NWIOBase64Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOBase64Test.m; sourceTree = "<group>"; };
 		D71A4F2C1476E231004B3AB3 /* NWIOTestTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOTestTools.h; sourceTree = "<group>"; };
 		D71A4F2D1476E231004B3AB3 /* NWIOTestTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOTestTools.m; sourceTree = "<group>"; };
 		D734394314746C2F0092A23A /* NWIOCaseFlipperDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOCaseFlipperDemo.h; sourceTree = "<group>"; };
@@ -238,6 +245,8 @@
 		D75A3BED1472B95B00DA0DF9 /* NWIOTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NWIOTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75A3BEE1472B95B00DA0DF9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D799A3BF1472BAE00036DB1F /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D7FD4222148BDE4C00838259 /* NWIOBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWIOBase64.h; sourceTree = "<group>"; };
+		D7FD4223148BDE4C00838259 /* NWIOBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWIOBase64.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +300,8 @@
 		D734394214746C2F0092A23A /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				D7068085149660A2005A6791 /* NWIOBase64Demo.h */,
+				D7068086149660A2005A6791 /* NWIOBase64Demo.m */,
 				D734394314746C2F0092A23A /* NWIOCaseFlipperDemo.h */,
 				D734394414746C2F0092A23A /* NWIOCaseFlipperDemo.m */,
 				D734394514746C2F0092A23A /* NWIOConsoleDemo.h */,
@@ -448,6 +459,8 @@
 		D73439A614746C2F0092A23A /* Transforms */ = {
 			isa = PBXGroup;
 			children = (
+				D7FD4222148BDE4C00838259 /* NWIOBase64.h */,
+				D7FD4223148BDE4C00838259 /* NWIOBase64.m */,
 				D73439A714746C2F0092A23A /* NWIOCaseFlipper.h */,
 				D73439A814746C2F0092A23A /* NWIOCaseFlipper.m */,
 				D73439A914746C2F0092A23A /* NWIOCrypto.h */,
@@ -544,6 +557,8 @@
 		D7343A0214746C390092A23A /* Transforms */ = {
 			isa = PBXGroup;
 			children = (
+				D70680891496637A005A6791 /* NWIOBase64Test.h */,
+				D706808A1496637A005A6791 /* NWIOBase64Test.m */,
 				D7343A0314746C390092A23A /* NWIOCaseFlipperTest.h */,
 				D7343A0414746C390092A23A /* NWIOCaseFlipperTest.m */,
 				D7343A0514746C390092A23A /* NWIODeflateTest.h */,
@@ -747,6 +762,8 @@
 				D73439E314746C2F0092A23A /* NWIOHcode.m in Sources */,
 				D73439E414746C2F0092A23A /* NWIOZcode.m in Sources */,
 				D71A4F2E1476E231004B3AB3 /* NWIOTestTools.m in Sources */,
+				D7FD4224148BDE4C00838259 /* NWIOBase64.m in Sources */,
+				D7068087149660A2005A6791 /* NWIOBase64Demo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +785,7 @@
 				D7343A1E14746C390092A23A /* NWIOZcodeTest.m in Sources */,
 				D71A4F301476E4D6004B3AB3 /* NWIODeflateTest.m in Sources */,
 				D71A4F311476ECE3004B3AB3 /* NWIOConstantTest.m in Sources */,
+				D706808C149663A6005A6791 /* NWIOBase64Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
