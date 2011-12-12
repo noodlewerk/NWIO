@@ -19,6 +19,9 @@
 
 #import "NWIOLog.h"
 
+// to add logging of characters in 0x00-0x20 range
+//#define LOG_CONTROL_CHARS
+
 static unsigned char toPrint[256] = 
     "                                "
     " !\"#$%&'()*+,-./0123456789:;<=>?"
@@ -56,11 +59,20 @@ static NSUInteger const NWIOLogBufferWidth = 16;
         }
         [result appendString:@"  "];
         for (NSUInteger j = i, count = MIN(i + NWIOLogBufferWidth, length); j < count; j++) {
-            char c = toPrint[b[j]];
-            // for some reason '%' is not propery interpreted
+            unsigned char c = b[j];
+#ifdef LOG_CONTROL_CHARS
+            if (c <= 0x20) {
+                unichar d = 0x2400 + c;
+                [result appendString:[NSString stringWithCharacters:&d length:1]];
+            } else if (c == 0x7F) {
+                unichar d = 0x2421;
+                [result appendString:[NSString stringWithCharacters:&d length:1]];
+            } else
+#endif
             if (c != '%') {
-                [result appendFormat:@"%c", c];
+                [result appendFormat:@"%c", toPrint[c]];
             } else {
+                // for some reason '%' is not propery interpreted
                 [result appendString:@"%%"];
             }
         }

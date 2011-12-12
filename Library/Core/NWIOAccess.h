@@ -25,11 +25,16 @@
  *
  * NWIOAccess represents fixed-length data that can be read from and written to in any order, similar to NSData.
  *
- * Subclasses should implement at least one read and one write method. If a buffer is NULL, it should be interpret as a transparent constant buffer. If a range or location is out of the access' length, it should be clamped.
+ * Subclasses should implement at least one read and one write method. If a buffer is NULL, it should be interpret as a zero constant buffer. If a range or location is out of the access' length, it should be clamped.
  *
  * @warning NB: This is an abstract class. Do not instantiate it directly, but subclass and override abstract methods.
  */
 @interface NWIOAccess: NWIOBase
+
+/**
+ * The length for the internal buffer used to switch between active (read/write) and passive (readable/writable).
+ */
+@property (nonatomic, assign) NSUInteger bufferLength;
 
 /**
  * The length of the underlying input data. All read ranges should fall within this length.
@@ -74,5 +79,12 @@
  * @return The number of bytes available in `buffer`.
  */
 - (NSUInteger)writable:(void **)buffer location:(NSUInteger)location;
+
+/**
+ * Should be called if not all buffer data from last writable: are used.
+ * @param length The number of bytes that were not written to.
+ * @see writable:
+ */
+- (void)unwritable:(NSUInteger)length;
 
 @end
