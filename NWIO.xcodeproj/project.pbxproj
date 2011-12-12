@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		D7068087149660A2005A6791 /* NWIOBase64Demo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7068086149660A2005A6791 /* NWIOBase64Demo.m */; };
 		D706808C149663A6005A6791 /* NWIOBase64Test.m in Sources */ = {isa = PBXBuildFile; fileRef = D706808A1496637A005A6791 /* NWIOBase64Test.m */; };
-		D71A4F2E1476E231004B3AB3 /* NWIOTestTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D71A4F2D1476E231004B3AB3 /* NWIOTestTools.m */; };
 		D71A4F301476E4D6004B3AB3 /* NWIODeflateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D7343A0614746C390092A23A /* NWIODeflateTest.m */; };
 		D71A4F311476ECE3004B3AB3 /* NWIOConstantTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D73439FF14746C390092A23A /* NWIOConstantTest.m */; };
+		D72C688B1496804000B79107 /* NWIOTestTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D71A4F2D1476E231004B3AB3 /* NWIOTestTools.m */; };
 		D73439B114746C2F0092A23A /* NWIOCaseFlipperDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D734394414746C2F0092A23A /* NWIOCaseFlipperDemo.m */; };
 		D73439B214746C2F0092A23A /* NWIOConsoleDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D734394614746C2F0092A23A /* NWIOConsoleDemo.m */; };
 		D73439B314746C2F0092A23A /* NWIOCounterDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = D734394814746C2F0092A23A /* NWIOCounterDemo.m */; };
@@ -761,7 +761,6 @@
 				D73439E214746C2F0092A23A /* NWIODeflate.m in Sources */,
 				D73439E314746C2F0092A23A /* NWIOHcode.m in Sources */,
 				D73439E414746C2F0092A23A /* NWIOZcode.m in Sources */,
-				D71A4F2E1476E231004B3AB3 /* NWIOTestTools.m in Sources */,
 				D7FD4224148BDE4C00838259 /* NWIOBase64.m in Sources */,
 				D7068087149660A2005A6791 /* NWIOBase64Demo.m in Sources */,
 			);
@@ -786,6 +785,7 @@
 				D71A4F301476E4D6004B3AB3 /* NWIODeflateTest.m in Sources */,
 				D71A4F311476ECE3004B3AB3 /* NWIOConstantTest.m in Sources */,
 				D706808C149663A6005A6791 /* NWIOBase64Test.m in Sources */,
+				D72C688B1496804000B79107 /* NWIOTestTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
