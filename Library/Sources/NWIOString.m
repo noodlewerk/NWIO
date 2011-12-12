@@ -101,6 +101,14 @@
     return [super hasReadBytesAvailable];
 }
 
+- (NSError *)readError {
+    return nil;
+}
+
+- (NSError *)writeError {
+    return nil;
+}
+
 - (void)rewindRead {
     [super rewindRead];
     inputLocation = 0;
