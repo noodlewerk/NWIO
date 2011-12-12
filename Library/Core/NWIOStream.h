@@ -25,7 +25,7 @@
  *
  * NWIOStream represents a stream that can be read from and written to, similar to NSInputStream and NSOutputStream
  *
- * Subclasses should implement at least one read and one write method. If a buffer is NULL, it should be interpret as a transparent constant buffer. If a range or location is out of the access' length, it should be clamped.
+ * Subclasses should implement at least one read and one write method. If a buffer is NULL, it should be interpret as a zero constant buffer. If a range or location is out of the access' length, it should be clamped.
  *
  * @warning NB: This is an abstract class. Do not instantiate it directly, but subclass and override abstract methods.
  */
@@ -35,7 +35,7 @@
 /**
  * The length for the internal buffer used to switch between active (read/write) and passive (readable/writable).
  */
-@property (nonatomic, assign) NSUInteger bLength;
+@property (nonatomic, assign) NSUInteger bufferLength;
 
 /**
  * Reads next input bytes into the buffer.
