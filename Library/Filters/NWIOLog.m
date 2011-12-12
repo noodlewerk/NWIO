@@ -19,6 +19,15 @@
 
 #import "NWIOLog.h"
 
+static unsigned char toPrint[256] = 
+    "                                "
+    " !\"#$%&'()*+,-./0123456789:;<=>?"
+    "@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
+    "`abcdefghijklmnopqrstuvwxyz{|}~ "
+    "                                "
+    "                                "
+    "                                "
+    "                                ";
 
 @interface NWIOLogBase : NSObject
 @end
@@ -47,13 +56,13 @@ static NSUInteger const NWIOLogBufferWidth = 16;
         }
         [result appendString:@"  "];
         for (NSUInteger j = i, count = MIN(i + NWIOLogBufferWidth, length); j < count; j++) {
-            unsigned char c = b[j];
-            if (c < 32) {
-                c = ' ';
-            } else if (c > 126) {
-                c = ' ';
+            char c = toPrint[b[j]];
+            // for some reason '%' is not propery interpreted
+            if (c != '%') {
+                [result appendFormat:@"%c", c];
+            } else {
+                [result appendString:@"%%"];
             }
-            [result appendFormat:@"%c", c];
         }
     }
     return result;
