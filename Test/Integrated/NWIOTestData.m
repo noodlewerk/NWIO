@@ -25,6 +25,9 @@
 + (NSArray *)datas {
     NSMutableArray *result = [NSMutableArray array];
     [result addObject:[NSData data]];
+    [result addObject:[@"\0" dataUsingEncoding:NSUTF8StringEncoding]];
+    [result addObject:[@"\1" dataUsingEncoding:NSUTF8StringEncoding]];
+    [result addObject:[@"\0\0" dataUsingEncoding:NSUTF8StringEncoding]];
     [result addObject:[@"a" dataUsingEncoding:NSUTF8StringEncoding]];
     [result addObject:[@"test" dataUsingEncoding:NSUTF8StringEncoding]];
     [result addObject:[@"And when we are obviously entered into that mode,\nyou can see a radical subjectivity,\nradical attunement to individuality, uniqueness to that which the mind is,\nopens itself to a vast objectivity." dataUsingEncoding:NSUTF8StringEncoding]];
@@ -53,6 +56,7 @@
     [filters addObject:[[NWIOHcodeStream alloc] init]];
     [filters addObject:[[NWIOZcodeStream alloc] init]];
     [filters addObject:[[NWIODeflateStream alloc] init]];
+    [filters addObject:[[NWIOBase64Stream alloc] init]];
     [filters addObject:[[NWIOCryptoStream alloc] init]];
     [result addObjectsFromArray:filters];
     [result addObject:[[NWIOChainStream alloc] init]];
@@ -69,6 +73,7 @@
     [result addObject:[[NWIODeflateTransform alloc] init]];
     [result addObject:[[NWIOHcodeTransform alloc] init]];
     [result addObject:[[NWIOZcodeTransform alloc] init]];
+    [result addObject:[[NWIOBase64Transform alloc] init]];
     return result;
 }
 
