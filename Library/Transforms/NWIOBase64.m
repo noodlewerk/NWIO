@@ -127,6 +127,7 @@ static unsigned char toDec[256] = {
     if (backChar && backState && toLength) {
         // we assume next character will be a zero
         *toBuffer = backChar;
+        backChar = 0;
         (*toInc)++;
         backState = 0;
     }
@@ -134,12 +135,12 @@ static unsigned char toDec[256] = {
 }
 
 - (BOOL)flushForwardToBuffer:(unsigned char *)toBuffer toLength:(NSUInteger)toLength toInc:(NSUInteger *)toInc error:(NSError **)error {
-    if (forChar && forState && toLength) {
+    if (forState && toLength) {
         *(toBuffer++) = toBase[forChar];
+        forChar = 0;
         (*toInc)++;
         forState = ++forState % 4;
         toLength--;
-        forChar = 0;
     }
     while (forState && toLength) {
         *(toBuffer++) = '=';
