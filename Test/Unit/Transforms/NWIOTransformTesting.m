@@ -23,7 +23,26 @@
 
 @implementation NWIOTransformTesting
 
++ (void)testTransform:(NWIOTransform *)transform plainString:(NSString *)plain codedString:(NSString *)coded {
+    [self testTransform:transform plain:[plain dataUsingEncoding:NSUTF8StringEncoding] coded:[coded dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
 + (void)testTransform:(NWIOTransform *)transform plain:(NSData *)plain coded:(NSData *)coded {
+    NSMutableData *codedOut = [NSMutableData dataWithCapacity:coded.length];
+    NWIODataStream *dataStream = [[NWIODataStream alloc] initWithInput:coded output:codedOut];
+    NWIOTransformStream *transfromStream = [[NWIOTransformStream alloc] initWithStream:dataStream transform:transform];
+    NSData *plainOut = [transfromStream drainFromInputToDataBuffered:YES];
+    NSAssert([plain isEqualToData:plainOut], @"backward transform failed");
+    [transfromStream drainFromDataToOutput:plain bufferd:YES];
+    NSAssert([coded isEqualToData:codedOut], @"forward transform failed");
+}
+
+
++ (void)testSingleTransform:(NWIOTransform *)transform plainString:(NSString *)plain codedString:(NSString *)coded {
+    [self testSingleTransform:transform plain:[plain dataUsingEncoding:NSUTF8StringEncoding] coded:[coded dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
++ (void)testSingleTransform:(NWIOTransform *)transform plain:(NSData *)plain coded:(NSData *)coded {
     unsigned char buffer[256];
 
     {

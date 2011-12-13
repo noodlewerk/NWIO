@@ -24,11 +24,24 @@
 
 @implementation NWIOCaseFlipperTest
 
+- (void)testPlain:(NSString *)plain coded:(NSString *)coded {
+    [NWIOTransformTesting testSingleTransform:[[NWIOCaseFlipperTransform alloc] init] plainString:plain codedString:coded];
+    [NWIOTransformTesting testTransform:[[NWIOCaseFlipperTransform alloc] init] plainString:plain codedString:coded];
+}
+
 - (void)test {
-    NWIOCaseFlipperTransform *transform = [[NWIOCaseFlipperTransform alloc] init];
-    NSData *plain = [@"For the specific language governing permissions" dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *coded = [@"fOR THE SPECIFIC LANGUAGE GOVERNING PERMISSIONS" dataUsingEncoding:NSUTF8StringEncoding];
-    [NWIOTransformTesting testTransform:transform plain:plain coded:coded];
+    [self testPlain:@"" coded:@""];
+    
+    [self testPlain:@"a" coded:@"A"];
+    [self testPlain:@" " coded:@" "];
+    [self testPlain:@"Z" coded:@"z"];
+    
+    [self testPlain:@"."    coded:@"."];
+    [self testPlain:@"e."   coded:@"E."];
+    [self testPlain:@"ge."  coded:@"GE."];
+    [self testPlain:@"dge." coded:@"DGE."];
+    
+    [self testPlain:@"We are not interested in the facT that the brain has the consistency of cold porridge." coded:@"wE ARE NOT INTERESTED IN THE FACt THAT THE BRAIN HAS THE CONSISTENCY OF COLD PORRIDGE."];
 }
 
 @end

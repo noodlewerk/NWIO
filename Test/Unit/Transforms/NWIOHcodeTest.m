@@ -24,11 +24,24 @@
 
 @implementation NWIOHcodeTest
 
+- (void)testPlain:(NSString *)plain coded:(NSString *)coded {
+    [NWIOTransformTesting testSingleTransform:[[NWIOHcodeTransform alloc] init] plainString:plain codedString:coded];
+    [NWIOTransformTesting testTransform:[[NWIOHcodeTransform alloc] init] plainString:plain codedString:coded];
+}
+
 - (void)test {
-    NWIOHcodeTransform *transform = [[NWIOHcodeTransform alloc] init];
-    NSData *plain = [@"For the specific language governing permissions" dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *coded = [@"466F7220 74686520 73706563 69666963 206C616E 67756167 6520676F 7665726E 696E6720 7065726D 69737369 6F6E73" dataUsingEncoding:NSUTF8StringEncoding];
-    [NWIOTransformTesting testTransform:transform plain:plain coded:coded];
+    [self testPlain:@"" coded:@""];
+    
+    [self testPlain:@" " coded:@"20"];
+    [self testPlain:@"\n" coded:@"0A"];
+    
+    [self testPlain:@"s"     coded:@"73"];
+    [self testPlain:@"ns"    coded:@"6E73"];
+    [self testPlain:@"ons"   coded:@"6F6E73"];
+    [self testPlain:@"ions"  coded:@"696F6E73"];
+    [self testPlain:@"sions" coded:@"73696F6E 73"];
+    
+    [self testPlain:@"For the specific language governing permissions" coded:@"466F7220 74686520 73706563 69666963 206C616E 67756167 6520676F 7665726E 696E6720 7065726D 69737369 6F6E73"];
 }
 
 @end

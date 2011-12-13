@@ -24,11 +24,23 @@
 
 @implementation NWIOZcodeTest
 
+- (void)testPlain:(NSString *)plain coded:(NSString *)coded {
+    [NWIOTransformTesting testSingleTransform:[[NWIOZcodeTransform alloc] init] plainString:plain codedString:coded];
+    [NWIOTransformTesting testTransform:[[NWIOZcodeTransform alloc] init] plainString:plain codedString:coded];
+}
+
 - (void)test {
-    NWIOZcodeTransform *transform = [[NWIOZcodeTransform alloc] init];
-    NSData *plain = [@"For the specific language governing permissions" dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *coded = [@"ForZ20theZ20specificZ20languageZ20governingZ20permissions" dataUsingEncoding:NSUTF8StringEncoding];
-    [NWIOTransformTesting testTransform:transform plain:plain coded:coded];
+    [self testPlain:@"" coded:@""];
+    
+    [self testPlain:@"a" coded:@"a"];
+    [self testPlain:@"z" coded:@"z"];
+    [self testPlain:@"Z" coded:@"Z5A"];
+    
+    [self testPlain:@"."   coded:@"Z2E"];
+    [self testPlain:@"Z."  coded:@"Z5AZ2E"];
+    [self testPlain:@"zZ." coded:@"zZ5AZ2E"];
+    
+    [self testPlain:@"Machines take me by surprise with great frequency." coded:@"MachinesZ20takeZ20meZ20byZ20surpriseZ20withZ20greatZ20frequencyZ2E"];
 }
 
 @end

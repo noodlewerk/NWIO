@@ -24,5 +24,10 @@
 
 
 @interface NWIOTransformTesting : NSObject
+
 + (void)testTransform:(NWIOTransform *)transform plain:(NSData *)plain coded:(NSData *)coded;
++ (void)testTransform:(NWIOTransform *)transform plainString:(NSString *)plain codedString:(NSString *)coded;
++ (void)testSingleTransform:(NWIOTransform *)transform plain:(NSData *)plain coded:(NSData *)coded;
++ (void)testSingleTransform:(NWIOTransform *)transform plainString:(NSString *)plain codedString:(NSString *)coded;
+
 @end
