@@ -121,7 +121,7 @@ static unsigned char isAlpha[256] = {
 - (BOOL)transformForwardFromBuffer:(const unsigned char *)fromBuffer fromLength:(NSUInteger)fromLength fromInc:(NSUInteger *)fromInc toBuffer:(unsigned char *)toBuffer toLength:(NSUInteger)toLength toInc:(NSUInteger *)toInc error:(NSError **)error {
     const unsigned char *fromEnd = fromBuffer + fromLength;
     unsigned char *toEnd = toBuffer + toLength;
-    for (; toBuffer < toEnd && fromBuffer < fromEnd; toBuffer++) {
+    for (; toBuffer < toEnd && (fromBuffer < fromEnd || forState > 0); toBuffer++) {
         switch (forState) {
             case 0:
                 forChar = *(fromBuffer++);
