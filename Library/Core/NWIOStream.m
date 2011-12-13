@@ -34,6 +34,10 @@
     void *writableBuffer;
     NSUInteger writableBufferLength;
     NSRange wRange;
+#ifdef DEBUG
+    BOOL readLoopFlag;
+    BOOL writeLoopFlag;
+#endif
 }
 
 @synthesize bufferLength;
@@ -77,7 +81,9 @@
     for (BOOL noRead = YES; length && noRead;) {
         if (!readBufferLength) {
             // no leftovers so read from stream
+            NSAssert(!readLoopFlag && (readLoopFlag = YES), @"Read loop detected");
             readBufferLength = [self readable:(const void **)&readBuffer];
+            NSAssert(readLoopFlag && !(readLoopFlag = NO), @"Read loop broken");
             if (!readBufferLength) {
                 // apparently nothing available, so stop
                 break;
@@ -122,7 +128,9 @@
         }
         memset(readableBuffer, 0, readableBufferLength);
     }
+    NSAssert(!readLoopFlag && (readLoopFlag = YES), @"Read loop detected, do not use NSStream or NSFilter directly");
     NSUInteger result = [self read:readableBuffer length:readableBufferLength];
+    NSAssert(readLoopFlag && !(readLoopFlag = NO), @"Read loop broken");
     if (result > readableBufferLength) {
         result = readableBufferLength;
     }
@@ -183,7 +191,9 @@
         memset(writableBuffer, 0, writableBufferLength);
     } else if (wRange.length) {
         // flush last writable first
+        NSAssert(!writeLoopFlag && (writeLoopFlag = YES), @"Write loop detected, do not use NSStream or NSFilter directly");
         NSUInteger l = [self write:writableBuffer + wRange.location length:wRange.length];
+        NSAssert(writeLoopFlag && !(writeLoopFlag = NO), @"Write loop broken");
         if (l < wRange.length) {
             // there are still writes to be done, keep for next invocation
             wRange.location += l;
@@ -218,7 +228,9 @@
     }
     while (wRange.length) {
         // flush last writable
+        NSAssert(!writeLoopFlag && (writeLoopFlag = YES), @"Write loop detected");
         NSUInteger l = [self write:writableBuffer + wRange.location length:wRange.length];
+        NSAssert(writeLoopFlag && !(writeLoopFlag = NO), @"Write loop broken");
         if (l > wRange.length) {
             l = wRange.length;
         }
